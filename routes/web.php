@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('msajili','PlayersController@store');
+
+Route::get('detele/player/{id}','PlayersController@destroy');
+Route::get('edit/player/{id}','PlayersController@edit');
+
+Route::post('update/player/{id}','PlayersController@update');
