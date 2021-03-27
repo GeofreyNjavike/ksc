@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Player;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Carbon;
 
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +65,15 @@ if ($user === null) {
     $player->class=$request->class;
 
     $player->save();
+
+    $data = array('name'=>"Ksc");
+
+    Mail::send(['text'=>'mail'], $data, function($message) {
+        $message->to('geofreynjavike2017@gmail.com', 'Mzazi Mpendwa')->subject('Taarifa za mwanao zimepokelewa');
+        $message->from('geofreynjavike@gmail.com', 'Ksc');
+    });
+
+
 
      return redirect()->route('home')->with('success', 'Mwanao Amesajiliwa Kikamilifu!');
 }
@@ -158,4 +168,28 @@ $years= $dob->age;
 
         return  redirect()->route('home')->with('success', 'Player Deleted');
     }
+
+
+public function send_aprove(Player $player, $id){
+        $user= Player::
+         join('users', 'players.parent_id', '=', 'users.id')
+         ->first();
+
+    $data = array('name'=>"Ksc");
+
+    Mail::send(['text'=>'mail'], $data, function($message) {
+        $message->to('geofreynjavike2017@gmail.com', 'Mzazi Mpendwa')->subject('Usajili wa Mwanao Umekamilika');
+        $message->from('geofreynjavike@gmail.com', 'Ksc');
+    });
+
+
+    $player= array();
+    $player['progress']='Aproved';
+       DB::table('players')->where('player_id', $id)->update($player);
+
+
+        return redirect()->route('home')->with('success', 'Status Edited Succefully');
+
+
+}
 }

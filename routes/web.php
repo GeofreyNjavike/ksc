@@ -26,3 +26,5 @@ Route::get('detele/player/{id}','PlayersController@destroy');
 Route::get('edit/player/{id}','PlayersController@edit');
 
 Route::post('update/player/{id}','PlayersController@update');
+
+Route::get('change/status/{id}','PlayersController@send_aprove');

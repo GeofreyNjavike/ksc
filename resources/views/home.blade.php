@@ -123,6 +123,15 @@
                                 </a>
                                 <a class="btn btn-info" href="{{  URL::to('edit/player/'.$value->player_id) }}"  onclick="return confirm('Are You Sure?')"><i class="fas fa-edit"></i>
                                 </a>
+
+                             @if ( $value->progress == 'Aproved')
+                                <a  class="btn btn-success"  >Aproved
+                                </a>
+                                @else
+                                <a href="{{ URL::to('change/status/'.$value->player_id) }}" class="btn btn-warning"  >Aprove
+                                </a>
+                                @endif
+
                             </td>
                             <td>{{ $value->player_fname }}</td>
                             <td>{{ $value->player_lname }}</td>
