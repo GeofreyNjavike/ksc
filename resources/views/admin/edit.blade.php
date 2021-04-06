@@ -63,7 +63,7 @@
 </div>
 <div class="col-md-6">
     <div class="form-group">
-        <label class="small mb-1" >Age: <b>{{ $years }}</b></label>
+        <label class="small mb-1" >Age: <b>{{ $dt3 }} Years</b></label>
         </div>
 </div>
                                             </div>

@@ -125,7 +125,7 @@
                                 </a>
 
                              @if ( $value->progress == 'Aproved')
-                                <a  class="btn btn-success"  >Aproved
+                                <a  class="btn btn-success"  >Done
                                 </a>
                                 @else
                                 <a href="{{ URL::to('change/status/'.$value->player_id) }}" class="btn btn-warning"  >Aprove
@@ -158,6 +158,274 @@
 </div>
 
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalz" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">Mahudurio ya Wachezaji</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form action="{{ url('atendance') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                @foreach ($user as $went )
+
+                <div class="container jumbotron">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src=" {{ asset('storage/players/'.$went->image) }}" class="rounded-circle " style="height:
+                            70px; width:70px;" >
+                            <br>
+
+                            <label style="color: #4F42B5;">{{ $went->player_fname }}</label>
+
+
+                        </div>
+
+
+                        <div class="col-md-3">
+            <input type="hidden" value="{{ $went['player_id'] }}" name="player_id[]">
+                        </div>
+
+
+                        <div class="col-md-6" type='text'>
+                            <label style="text-align: center; color: #4F42B5; padding-left:10px;">Maendeleo</label>
+                            <br>
+
+
+                            <select id="inputState" class="form-control" name="maendeleo[]">
+                              <option selected>Yupo</option>
+                              <option>Hayupo</option>
+                              <option>Dharura</option>
+                            </select>
+
+
+                        </div>
+                          </div>
+                  </div>
+                  @endforeach
+                  <div class="modal-footer">
+                    <input type="submit"  value="save"  class="btn btn-secondary" >
+                  </div>
+
+            </form>
+    </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Modal 2-->
+    <div class="modal fade" id="exampleModaly" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">Tengeneza</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form action="{{ url('tukio') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="container jumbotron">
+                    <div class="row">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Jina la tukio:</label>
+                                    <input class="form-control py-4" name="tukio"   id="inputFirstName" type="text"  />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Mahali/Uwanja</label>
+                                    <input class="form-control py-4" name="mahali"  type="text" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Picha:</label>
+                                    <input class="form-control py-4" name="image"   id="inputFirstName" type="file"  />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Muongozaji/Kocha</label>
+                                    <input class="form-control py-4" name="muongozaji"  type="text"  />
+                                </div>
+                            </div>
+                        </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Tarehe:</label>
+                                    <input class="form-control py-4" name="tarehe"   id="inputFirstName" type="date"  />
+                                </div>
+                            </div>
+
+
+
+                          </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input type="submit"  value="save"  class="btn btn-secondary" style="background-color:  #4F42B5;">
+                  </div>
+
+            </form>
+    </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal 3-->
+    <div class="modal fade" id="exampleModald" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">Tengeneza Taarifa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form action="{{ url('taarifa') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="container jumbotron">
+                    <div class="row">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Jina la taarifa:</label>
+                                    <input class="form-control py-4" name="taarifa"   id="inputFirstName" type="text"  required/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Faili</label>
+                                    <input class="form-control py-4" name="faili"  type="file"  />
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Ujumbe:</label>
+                                    <textarea class="form-control py-4" name="ujumbe"   id="inputFirstName" type="textarea"></textarea>
+                                </div>
+                            </div>
+
+
+
+                          </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input type="submit"  value="save"  class="btn btn-secondary" style="background-color:  #4F42B5;">
+                  </div>
+
+            </form>
+    </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Modal 4-->
+    <div class="modal fade" id="exampleModalc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">Hifadhi Magoli</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form action="{{ url('magoli') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="container jumbotron">
+                    <div class="row">
+                        <div class="form-row">
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label class="small mb-1" >Jina la Mchezaji:</label>
+                                    <select name="player_fname" id="player_fname" class="form-select" >
+
+                                    @foreach ($user as $value )
+
+                                        <option value="{{ $value->player_id }}" >{{ $value->player_fname }}</option>
+
+
+                                    @endforeach
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Idadi Ya Magoli</label>
+                                    <input class="form-control py-4" name="magoli"  type="number"  required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label class="small mb-1" >Maoni Ya Kocha:</label>
+                                    <input class="form-control py-4" name="maoni"  type="text"  required/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Tarehe</label>
+                                    <input class="form-control py-4" name="tarehe_ya_magoli"  type="date"  required/>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                          </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input type="submit"  value="save"  class="btn btn-secondary" style="background-color:  #4F42B5;">
+                  </div>
+
+            </form>
+    </div>
+
+        </div>
+      </div>
+    </div>
+
+
 
 
 

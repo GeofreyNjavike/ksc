@@ -59,34 +59,33 @@
     <div class="container aos-init aos-animate" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>About</h2>
-        <p>About Us</p>
+        <h2>Kuhusu Kisota</h2>
+        <p>Kuhusu KSC</p>
       </div>
 
       <div class="row content">
         <div class="col-lg-6">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+            Kisota community sports centre (KSC) ni kituo cha watoto kwaajili ya :
           </p>
           <ul>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            <li><i class="ri-check-double-line"></i> kucheza</li>
+            <li><i class="ri-check-double-line"></i> kujifunza</li>
+            <li><i class="ri-check-double-line"></i> kuinteract/ujirani</li>
           </ul>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0">
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Kwasababu ya miji kukua na changamoto kama usalama watoto wanafungiwa kwenye mageti na wanaenda na kurudi kutoka shule kwa magari hawapati nafasi ya kuchaza na kujichanganya na wenzao mtaani. Hii inapelekea hata kuwa na afya mbovu n.k
           </p>
-          <a href="#" class="btn-learn-more">Learn More</a>
+          <a href="{{ url('players') }}" class="btn-learn-more">Jifunze Zaid</a>
         </div>
       </div>
 
     </div>
   </section>
+
+
 
   <section id="counts" class="counts">
     <div class="container aos-init aos-animate" data-aos="fade-up">
@@ -135,61 +134,169 @@
   </section>
 
 
-  <section id="why-us" class="why-us section-bg">
-    <div class="container-fluid aos-init aos-animate" data-aos="fade-up">
-        <div class="section-title">
-            <h2>Taarifa kuhusu KSC!</h2>
-            <p>Taarifa</p>
-          </div>
-      <div class="row">
-<div class="col-lg-1">
+  <section id="team" class="testimonials section-bg">
+    <div class="container">
 
-</div>
-        <div class="col-lg-5 align-items-stretch video-box aos-init aos-animate" style="background-image: url(&quot;assets/img/why-us.jpg&quot;); height: 70%" data-aos="zoom-in" data-aos-delay="100">
-          <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+      <div class="row">
+        <div class="section-title aos-init aos-animate" data-aos="fade-right">
+            <h2>Timu</h2>
+            <p>Timu</p>
+          </div>
+        <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+
+              <iframe width="380" height="430"
+              src="https://www.youtube.com/embed/l9BRv4NbqqA">
+              </iframe>
+
+
+
+        </div>
+        <div class="col-lg-8 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" style="padding-bottom: 50px;">
+
+          <div class="testimonials-slider swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper" style="transform: translate3d(-1890px, 0px, 0px); transition-duration: 0ms;" id="swiper-wrapper-518a139b194721050" aria-live="off"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" style="width: 358px; margin-right: 20px;" role="group" aria-label="1 / 9">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                </div>
+              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4" style="width: 358px; margin-right: 20px;" role="group" aria-label="2 / 9">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                  <h3>John Keno</h3>
+                  <h4>Entrepreneur</h4>
+                </div>
+              </div>
+
+              <div class="swiper-slide" data-swiper-slide-index="0" style="width: 358px; margin-right: 20px;" role="group" aria-label="3 / 9">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <h3>John Madosh</h3>
+                  <h4>Manager</h4>
+                </div>
+              </div><!-- End testimonial item -->
+
+
+
+
+              @foreach ($player as $a )
+              <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3" style="width: 358px; margin-right: 20px;" role="group" aria-label="6 / 9">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="{{ asset('storage/players/'.$a->image) }}" class="testimonial-img" alt="">
+                  <h3>{{ $a->player_fname }}</h3>
+                  <h4>{{ $a->position }}</h4>
+                </div>
+              </div><!-- End testimonial item -->
+              @endforeach
+
+
+
+
+            </div>
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact section-bg">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Wasiliana Nasi</h2>
+        <p>Wasiliana Nasi</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="info-box">
+                <i class="bx bx-map"></i>
+                <h3>Anuani Yetu</h3>
+                <p>Maweni, Mjimwema, KIGAMBONI-DSM</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box mt-4">
+                <i class="bx bx-envelope"></i>
+                <h3>Email Us</h3>
+                <p>info@example.com<br>contact@example.com</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box mt-4">
+                <i class="bx bx-phone-call"></i>
+                <h3>Call Us</h3>
+                <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="col-lg-6 d-flex flex-column justify-content-center align-items-stretch">
+        <div class="col-lg-6">
 
-          <div class="content">
-            <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto</strong></h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-            </p>
-          </div>
+          <form action="{{ URL::to('customer/contact') }}" method="post" role="form" >
+              @csrf
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="customer_name" class="form-control" id="name" placeholder="Your Name" required="">
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="customer_email" id="email" placeholder="Your Email" required="">
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="customer_subject" id="subject" placeholder="Subject" required="">
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="customer_message" rows="5" placeholder="Message" required=""></textarea>
+            </div>
+            <div class="my-3">
 
-          <div class="accordion-list">
-            <ul>
-              <li>
-                <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                  <p>
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                  </p>
-                </div>
-              </li>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="Tuma Ujumbe">
 
-              <li>
-                <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                  <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                  </p>
-                </div>
-              </li>
+          </form>
+        <div class="row">
+<div class="col-sm-5">
 
-              <li>
-                <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                  <p>
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                  </p>
-                </div>
-              </li>
+</div>
 
-            </ul>
-          </div>
+<div class="col-sm-5">
 
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-instagram"></a>
+</div>
+        </div>
         </div>
 
       </div>
@@ -197,18 +304,18 @@
     </div>
   </section>
 
-
   <section id="services" class="services">
     <div class="container aos-init aos-animate" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Social Feeds</h2>
-        <p>Instagram</p>
+        <h2>Kupitia Google Ramani</h2>
+        <p>Tunapatikana</p>
       </div>
 
       <div class="row">
-        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-        <div class="elfsight-app-a9a6c038-55ba-4050-91e4-66618c8c7177"></div>
+
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1980.683471503656!2d39.346463526385406!3d-6.846539771435801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5f6002cc06bef760!2sKenonke%20Consulting!5e0!3m2!1ssw!2stz!4v1616922195096!5m2!1ssw!2stz" width="100%;" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>       </div>
 
 
 

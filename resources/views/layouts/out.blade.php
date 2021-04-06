@@ -16,6 +16,7 @@
   <link href="{{ asset('assets/img/apple-touch-icon.png') }}"  rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -30,6 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/style1.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -37,16 +39,20 @@
         <div class="container d-flex align-items-center justify-content-between">
 
           <h1 class="logo"><a href="/">KSC</a></h1>
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+
 
           <nav id="navbar" class="navbar">
             <ul>
+
+
               <li><a class="nav-link scrollto active" href="#hero">Nyumbani</a></li>
               <li><a class="nav-link scrollto" href="#about">Kuhusu</a></li>
-              <li><a class="nav-link scrollto" href="#services">Huduma</a></li>
-              <li><a class="nav-link scrollto " href="#portfolio">Wachezaji</a></li>
+
               <li><a class="nav-link scrollto" href="#team">Team</a></li>
+              <li><a class="nav-link scrollto" href="#contact">Mawasiliano</a></li>
+              <li><a class="nav-link scrollto" href="#services">Huduma</a></li>
+              <li><a class="nav-link scrollto " href="{{ url('squard') }}">Wachezaji</a></li>
               <li class="dropdown"><a href="#"><span>Profile</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
 
@@ -74,14 +80,14 @@
                   <li><a href="#">Drop Down 4</a></li>
                 </ul>
               </li>
-              <li><a class="nav-link scrollto" href="#contact">Mawasiliano</a></li>
+
               <li><a class="getstarted scrollto" href="#about">Staff</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav><!-- .navbar -->
+          </nav>
 
         </div>
-      </header><!-- End Header -->
+      </header>
     @yield('content')
 
     <!-- Vendor JS Files -->

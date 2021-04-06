@@ -16,6 +16,12 @@ class PlayersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -110,14 +116,25 @@ else{
 // $myDate= $player['dob']->where('player_id',$id)->select('dob')->where('player_id',$id)->first();
 // $years= Carbon::parse($myDate)->diff(Carbon::now())->format('%y years');
 
-$dob = Carbon::parse($player['dos']);
+$dt= Carbon::now();
 
-$years= $dob->age;
+
+
+$age = DB::table('players')->where('player_id',$id)->first();
+
+$age0 = $age->dob;
+
+
+
+
+
+$dt3 =$dt->diffInYears($age0);
+
 
         $player = DB::table('players')->where('player_id',$id)->first();
 
 
-        return  view('admin.edit', compact('player','years'));
+        return  view('admin.edit', compact('player','dt3'));
 
     }
 
