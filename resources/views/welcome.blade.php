@@ -134,6 +134,49 @@
   </section>
 
 
+
+  <section id="team" class="testimonials section-bg">
+        <div class="container">
+
+          <div class="row">
+            <div class="section-title aos-init aos-animate" data-aos="fade-right">
+                <h2>Taarifa</h2>
+                <p>Taarifa</p>
+              </div>
+            <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+
+                  <iframe width="380" height="430"
+                  src="https://www.youtube.com/embed/l9BRv4NbqqA">
+                  </iframe>
+
+
+
+            </div>
+<div class="col-lg-2">
+</div>
+            <div class="col-lg-6">
+
+           @foreach ($info  as $info)
+
+                <div class="row">
+                <div class="col-sm-4">
+                    <p>{{ $info->taarifa }}</p>
+
+                </div>
+                <div class="col-sm-8">
+                        <img src="{{ asset('storage/infos/'.$info->faili) }}" class="testimonial-img" alt="">
+                </div>
+                </div>
+
+           @endforeach
+
+          </div>
+          </div>
+
+        </div>
+      </section>
+
   <section id="team" class="testimonials section-bg">
     <div class="container">
 
@@ -221,6 +264,9 @@
 
     </div>
   </section>
+
+
+
 
   <section id="contact" class="contact section-bg">
     <div class="container aos-init aos-animate" data-aos="fade-up">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Info;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\AssignOp\Concat;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +25,9 @@ class ContactsController extends Controller
     {
         $player = DB::table('players')->where('progress','Aproved')->get();
 
-        return view('welcome', compact('player'));
+        $info = DB::table('infos')->get();
+
+        return view('welcome', compact('player','info'));
     }
 
     /**

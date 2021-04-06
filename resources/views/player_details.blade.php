@@ -165,7 +165,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="small mb-1" for="sel1">Darasa Analosoma: <b>{{ $player->class }}</b></label>
+                                                            <label class="small mb-1" for="sel1">Darasa: <b>{{ $player->class }}</b></label>
 
          </div>
                                                     </div>
@@ -174,13 +174,13 @@
                                                 <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="small mb-1" >Uzito:{{ $player->weight }}</label>
+                                                            <label class="small mb-1" >Uzito:<b>{{ $player->weight }}</b></label>
 
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="small mb-1" >Urefu:{{ $player->height }}</label>
+                                                            <label class="small mb-1" >Urefu:<b>{{ $player->height }}</b></label>
 
                                                         </div>
                                                     </div>
@@ -194,7 +194,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="small mb-1" >Nafasi:{{ $player->position }}</label>
+                                                            <label class="small mb-1" >Nafasi:<b>{{ $player->position }}</b></label>
 
                                                         </div>
                                                     </div>
@@ -202,13 +202,13 @@
                                                 <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="small mb-1" >Mguu:{{ $player->foot }}</label>
+                                                            <label class="small mb-1" >Mguu:<b>{{ $player->foot }}</b></label>
 
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="small mb-1" >Jezi Namba:{{ $player->jezi }}</label>
+                                                            <label class="small mb-1" >Jezi Namba:<b>{{ $player->jezi }}</b></label>
 
                                                         </div>
                                                     </div>
@@ -224,9 +224,62 @@
 
                                     </div>
                                     <div id="menu1" class="container tab-pane fade"><br>
-                                      <h3>Menu 1</h3>
-                                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    </div>
+                                      <div class="container-fluid">
+<div class="row">
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="small mb-1" >Magoli:<b>
+
+                @if ($goals->magoli== null )
+<p>Hajafunga</p>
+@else
+{{ $goals->magoli }}
+                @endif</b></label>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="small mb-1" >Msimu: <b>2020/ {{ $now }}</b></label>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="small mb-1" >FIZIKI:<b>Good</b></label>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="small mb-1" >: <b>2020/ {{ $now }}</b></label>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="small mb-1" >:MAONI YA KOCHA<b>Anajitahidi</b></label>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="small mb-1" >:MAENDELEO: <b> {{ $player->progress }}</b></label>
+
+                </div>
+            </div>
+        </div>
+
+
+</div>
+                                      </div>
                                     <div id="menu2" class="container tab-pane fade"><br>
                                       <h3>Menu 2</h3>
                                       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>

@@ -52,6 +52,7 @@
                   </div>
             </div>
             <div class="col-xl-3 col-md-6">
+            
             <div class="card-body">
                 <div class="h1 text-muted text-right mb-4"><i class="far fa-comments"></i></i></div>
                 <div class="text-value">87.500</div><small class="text-muted text-uppercase font-weight-bold">Comments</small>

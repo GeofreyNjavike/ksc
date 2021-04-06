@@ -88,7 +88,7 @@
                                     <td>{{ $value->medical_issue }}</td>
                                     <td>{{ $value->disabled }}</td>
                                     <th>
-                                        <a class="btn btn-danger" href="{{  URL::to('detele/product/'.$value->player_id) }}"  onclick="return confirm('Are You Sure?')">Delete</a>
+                                        <a class="btn btn-danger" href="{{  URL::to('detele/player/'.$value->player_id) }}"  onclick="return confirm('Are You Sure?')">Delete</a>
 
 
                                     </th>

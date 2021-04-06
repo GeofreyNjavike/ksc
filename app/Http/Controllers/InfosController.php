@@ -16,16 +16,11 @@ class InfosController extends Controller
 
     public function info(Request $request, Info $info){
 
-        if ($request->faili->getClientOriginalName()) {
+            $request->faili->getClientOriginalName();
             $ext = $request->faili->getClientOriginalExtension();
             $file = date('YmdHis').rand(1,9999).'.'.$ext;
             $request->faili->storeAs('public/infos',$file);
-        }
-        else
-        {
-            $file = '';
 
-        }
 
         $info->taarifa=$request->taarifa;
         $info->faili=$file;

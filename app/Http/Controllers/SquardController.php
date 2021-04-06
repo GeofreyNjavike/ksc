@@ -75,9 +75,15 @@ $dt3 =$dt->diffInYears($age0);
 
 $dt= Carbon::now();
 
+$now= Carbon::now()->format('Y');
 
 
 $age = DB::table('players')->where('player_id',$id)->first();
+
+
+$goals = DB::table('goals')->where('player_id',$id)->first();
+
+
 
 $age0 = $age->dob;
 
@@ -90,8 +96,9 @@ $dt3 =$dt->diffInYears($age0);
 
         $player = DB::table('players')->where('player_id',$id)->first();
 
+        $magoli = DB::table('goals')->select('magoli')->where('player_id',$id)->count();
 
-        return  view('player_details', compact('player','dt3'));
+        return  view('player_details', compact('player','dt3','goals','magoli','now'));
 
     }
 
