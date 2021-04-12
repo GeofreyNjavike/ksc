@@ -1,4 +1,4 @@
-@extends('layouts.admin.njavike')
+@extends('layouts.admin.geofrey')
 
 @section('content')
  <main>
@@ -111,7 +111,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" >Picha:</label>
-                                                        <input class="form-control py-4" name="image" id="inputFirstName" type="file"   />
+                                                        <input class="form-control py-4" name="image" id="inputFirstName" type="file"  required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -135,9 +135,46 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                         <label for="sel1">Nguvu:</label>
+  <select class="form-control" id="sel1" name="nguvu">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                          <label for="sel1">Chenga:</label>
+  <select class="form-control" id="sel1" name="chenga">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="form-group mt-4 mb-0">
 
                                                 <input type="submit" class="btn btn-primary btn-block" value="Update">
+
                                             </div>
                                         </form>
                                     </div>

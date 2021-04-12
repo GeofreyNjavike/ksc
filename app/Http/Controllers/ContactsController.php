@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Info;
+use App\Event;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\AssignOp\Concat;
 use Illuminate\Support\Facades\DB;
@@ -27,7 +28,13 @@ class ContactsController extends Controller
 
         $info = DB::table('infos')->get();
 
-        return view('welcome', compact('player','info'));
+        $events = DB::table('events')->get();
+
+        $players = DB::table('players')->count();
+
+        $mails = DB::table('contacts')->count();
+
+        return view('welcome', compact('player','info','events','players','mails'));
     }
 
     /**
@@ -71,31 +78,16 @@ class ContactsController extends Controller
 
     }
 
-
-
-    public function  atendance(Request $request , Atendance $atendance)
+    public function  mahudhurio(Request $request )
     {
 
-$data  =  $request->all();
-
-
-
-    // foreach($data as $lv){
-
-        // return $data;
-
-        // $str = json_decode($data['player_id'], true);
-
-        $atendance->player_id=$data['player_id'];
-        $atendance->maendeleo =$data["maendeleo"];
-
-        $atendance->save();
-
-
-    // }
-
+        foreach($request->player_id as $key=>$player_id){
+            $data = new Atendance();
+            $data-> player_id= $player_id;
+            $data-> maendeleo = $request->maendeleo[$key];
+            $data->save();
+        }
  return redirect()->route('home')->with('success', 'Umemaliza Kikamilifu!');
-
 
     }
 
@@ -107,9 +99,11 @@ $data  =  $request->all();
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $email = Contact::get();
+
+        return view('admin.jumbe', compact('email'));
     }
 
     /**
@@ -143,6 +137,8 @@ $data  =  $request->all();
      */
     public function destroy($id)
     {
-        //
+        DB::table('contacts')->where('id',$id)->delete();
+
+        return  back()->with('success', 'Ujumbe  Umefutwa');
     }
 }

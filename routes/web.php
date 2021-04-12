@@ -20,9 +20,21 @@ Route::get('/', 'ContactsController@index')->name('/');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/parent', 'HomeController@parent')->name('parent');
+
+
 Route::post('msajili','PlayersController@store');
 
+Route::post('malipo','PlayersController@malipo');
+
+Route::get('payed','PlayersController@paying');
+
+Route::get('mahudhurio','PlayersController@mahudhurio');
+
 Route::get('detele/player/{id}','PlayersController@destroy');
+
+Route::get('detele/email/{id}','ContactsController@destroy');
+
 
 Route::get('edit/player/{id}','PlayersController@edit');
 
@@ -32,11 +44,13 @@ Route::get('change/status/{id}','PlayersController@send_aprove');
 
 Route::post('customer/contact','ContactsController@store');
 
+Route::get('emails','ContactsController@show');
+
 Route::get('squard', 'SquardController@index')->name('squard');
 
 Route::get('show/player/{id}','SquardController@show')->name('player');
 
-Route::post('atendance','ContactsController@atendance');
+Route::post('atendance','ContactsController@mahudhurio');
 
 Route::post('tukio','EventsController@event');
 

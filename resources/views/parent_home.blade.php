@@ -39,8 +39,8 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Majina</th>
+                                    <th>MALIPO</th>
                                     <th>Maendeleo</th>
                                     <th>Date Of Birth</th>
                                     <th>Weight</th>
@@ -58,8 +58,21 @@
                                 @foreach ($parent as $value )
                                 <tr>
                                     <td>{{ $value->player_id }}</td>
-                                    <td>{{ $value->player_fname }}</td>
-                                    <td>{{ $value->player_lname }}</td>
+                                    <td>{{ $value->player_fname }}  {{ $value->player_lname }}</td>
+                                    <td>
+                                        
+@if($value->payment == 'Payed')
+                                            <a class="btn btn-success" data-toggle="modal" metho="post" >{{ $value->payment }}
+                                            </a>
+
+                                           @else
+
+                                            <a class="btn btn-warning" data-toggle="modal" metho="post" > {{ $value->payment }}
+                                        </a>
+
+                                           @endif
+
+                                    </td>
                                     <td>
 
                                         @if($value->progress == 'Pending')
@@ -145,7 +158,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="small mb-1" >Tarehe Ya Kuzaliwa</label>
-                                            <input class="form-control py-4" name="dob" id="inputEmailAddress" type="date" aria-describedby="emailHelp" placeholder="Enter email date of birth" />
+                                            <input class="py-4" name="dob" id="inputEmailAddress" type="date" aria-describedby="emailHelp" placeholder="Enter email date of birth" />
                                         </div>
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -227,6 +240,303 @@
 
     </div>
   </div>
+</div>
+
+
+
+<!-- Modal 2 -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <!-- Modal content-->
+          <div class="modal-content">
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header"><h3 class="text-center font-weight-light my-4" style="color: #0077be; font-size: 15px;">FANYA MALIPO KUKAMILISHA USAJILI WA MWANAO</h3></div>
+                                 <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">
+        <span> <img src="{{ asset('assets/img/Vodacom.jpg') }}" width="20" height="20"> </span> 
+          M-PESA</a></li>
+    <li><a data-toggle="tab" href="#menu1" style="colour: blue;">       <span> <img src="{{ asset('assets/img/tigo.svg') }}" width="20" height="20"> </span> TIGO PESA</a></li>
+    <li><a data-toggle="tab" href="#menu2">       <span> <img src="{{ asset('assets/img/airtel.png') }}" width="20" height="20"> </span> AIRTEL MONEY</a></li>
+  </ul>
+
+    <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <div class="card-body">
+                                    <form action="{{ URL::to('malipo') }}" method="POST">
+                                        @csrf
+                                      <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" >1. PIGA <b>*150*00#</b></label>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" >2. CHAGUA <b>(1) TUMA PESA</b></label>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                         <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                     <label class="small mb-1" >3. CHAGUA <b>(1) WEKA NAMBA YA SIMU</b></label>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label class="small mb-1" >4. ANDIKA <b> 0765133861</b></label>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    
+                                                     <label class="small mb-1" >5. ANDIKA KIASI</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                         <label class="small mb-1" >6. ANDIKA NYILA YAKO</label>  
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label class="small mb-1" for="sel1">7. THIBITISHA JINA <b>PETER MADOSH</b></label>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                   
+     <label class="small mb-1" >8. ANDIKA <b>1</b></label>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label class="small mb-1" for="sel2">Jina La Usajili</label>
+                                                  <input type="text" name="usajili" class="form-control" required="Tafadhari Jaza Taarifa" placeholder="Jina la Usajili wa laini ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="sel2">Kumbukumbu Namba</label>
+<input type="text" name="kumbukumbu" class="form-control" required="Tafadhari Jaza Taarifa" placeholder="Jaza Namba ya muamala">
+                                                     </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-4 mb-0">
+
+                                            <input type="submit" class="btn btn-primary btn-block" value="Thibitisha Malipo">
+                                        </div>
+                                    </form>
+                                </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+     
+       <div class="card-body">
+                                    <form action="{{ URL::to('malipo') }}" method="POST">
+                                        @csrf
+                                      <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" >1. PIGA <b>*150*01#</b></label>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" >2. CHAGUA <b>(3) TUMA MITANDAO MINGINE</b></label>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                         <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                     <label class="small mb-1" >3. CHAGUA <b>(3) M-PESA</b></label>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label class="small mb-1" >4. ANDIKA <b> 0765133861</b></label>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    
+                                                     <label class="small mb-1" >5. ANDIKA KIASI</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="sel1">7. THIBITISHA JINA <b>PETER MADOSH</b></label>
+                                                         
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label class="small mb-1" >6. ANDIKA NYILA YAKO</label> 
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                   
+     <label class="small mb-1" >8. ANDIKA <b>1</b></label>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label class="small mb-1" for="sel2">Jina La Usajili</label>
+                                                  <input type="text" name="usajili" class="form-control" required="Tafadhari Jaza Taarifa" placeholder="Jina la Usajili wa laini ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="sel2">Kumbukumbu Namba</label>
+<input type="text" name="kumbukumbu" class="form-control" required="Tafadhari Jaza Taarifa" placeholder="Jaza Namba ya muamala">
+                                                     </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-4 mb-0">
+
+                                            <input type="submit" class="btn btn-primary btn-block" value="Thibitisha Malipo">
+                                        </div>
+                                    </form>
+                                </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+       <div class="card-body">
+                                    <form action="{{ URL::to('malipo') }}" method="POST">
+                                        @csrf
+                                      <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" >1. PIGA <b>*150*60#</b></label>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" >2. CHAGUA <b>(2) TUMA MITANDAO MINGINE</b></label>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                         <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                     <label class="small mb-1" >3. CHAGUA <b>(2) M-PESA</b></label>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                <label class="small mb-1" >3. CHAGUA <b>(1) INGIZA NAMBA </b></label>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                     <label class="small mb-1" >4. ANDIKA <b> 0765133861</b></label> 
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                 
+                                                         
+                                                     <label class="small mb-1" >5. ANDIKA KIASI</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  
+                                                       <label class="small mb-1" for="sel1">6. THIBITISHA JINA <b>PETER MADOSH</b></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                   
+    <label class="small mb-1" >7. ANDIKA NYILA YAKO</label> 
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  <label class="small mb-1" for="sel2">Jina La Usajili</label>
+                                                  <input type="text" name="usajili" class="form-control" required="Tafadhari Jaza Taarifa" placeholder="Jina la Usajili wa laini ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="small mb-1" for="sel2">Kumbukumbu Namba</label>
+<input type="text" name="kumbukumbu" class="form-control" required="Tafadhari Jaza Taarifa" placeholder="Jaza Namba ya muamala">
+                                                     </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mt-4 mb-0">
+
+                                            <input type="submit" class="btn btn-primary btn-block" value="Thibitisha Malipo">
+                                        </div>
+                                    </form>
+                                </div>
+    </div>
+  </div>
+                               
+
+                            </div>
+                        </div>
+                    </div>
+
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
 

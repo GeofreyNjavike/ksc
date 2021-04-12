@@ -80,15 +80,36 @@
                                 <div class="form-row" style="background-image:  url('{{ asset('assets/img/soccer.jpg') }}'); height: 100%;
                                 width: 100%; padding-left:15px;">
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-7">
 
-                                        <img src=" {{ asset('storage/players/'.$player->image) }}" class="rounded-circle " style="height:
+                                        <div class="row">
+                                          <div class="col-sm-4">
+                                            <img src=" {{ asset('storage/players/'.$player->image) }}" class="rounded-circle " style="height:
                                         70px; width:70px;" >
+                                          </div>
+                                          <div class="col-sm-4">
+                                             
+                                          </div>
+                                         
+                                          <div class="col-sm-4">
+                                            <div class="form-group">
+                                                            <label class="small mb-1"  style="color: white;"><b>{{ $player->player_fname }}</b></label>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                         <label class="small mb-1" style="color: white; font-size: 15px; text-align: center;"><b>{{ $player->position }}</b></label>
+                                                         </div>
+
+                                          </div>
+
+                                           
+
+                                        </div>
 
 
                                          </div>
 
-                                         <div class="col-md-7">
+                                         <div class="col-md-3">
 
                                          </div>
 
@@ -147,12 +168,12 @@
                                                 <div class="form-row">
                                                  <div class="col-md-6">
                                                    <div class="form-group">
-                                                     <label class="small mb-1" >Date Of Birth: <b>{{ $player->dob }}</b></label>
+                                                     <label class="small mb-1" >DOB: <b>{{ $player->dob }} (Age {{ $dt3 }} Years)</b></label>
                                                         </div>
                                                      </div>
                                                  <div class="col-md-6">
                                                        <div class="form-group">
-                                                       <label class="small mb-1" >Age: <b>{{ $dt3 }} Years</b></label>
+                                                         <label class="small mb-1" >Nafasi:<b>{{ $player->position }}</b></label>
                                                          </div>
                                                           </div>
                                                 </div>
@@ -185,7 +206,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-row">
+                                                {{-- <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="small mb-1" >Picha:</label>
@@ -198,7 +219,7 @@
 
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="form-row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
@@ -230,12 +251,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label class="small mb-1" >Magoli:<b>
-
-                @if ($goals->magoli== null )
-<p>Hajafunga</p>
-@else
 {{ $goals->magoli }}
-                @endif</b></label>
+                </b></label>
 
             </div>
         </div>
@@ -250,13 +267,13 @@
     <div class="form-row">
         <div class="col-md-6">
             <div class="form-group">
-                <label class="small mb-1" >FIZIKI:<b>Good</b></label>
+                <label class="small mb-1" >Nguvu:<b>{{ $player->nguvu}} /10</b></label>
 
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label class="small mb-1" >: <b>2020/ {{ $now }}</b></label>
+             <label class="small mb-1" >Chenga:<b>{{ $player->chenga}} /10</b></label>
 
             </div>
         </div>
@@ -265,13 +282,13 @@
     <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label class="small mb-1" >:MAONI YA KOCHA<b>Anajitahidi</b></label>
+                    <label class="small mb-1" >Mechi:<b>2</b></label>
 
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label class="small mb-1" >:MAENDELEO: <b> {{ $player->progress }}</b></label>
+                    <label class="small mb-1" >MAENDELEO: <b> {{ $player->progress }}</b></label>
 
                 </div>
             </div>

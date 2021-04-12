@@ -10,6 +10,7 @@
         <link href="{{ asset('adm/css/styles.css') }}" rel="stylesheet" />
         <link href="{{ asset('adm/css/cdn.css') }}" rel="stylesheet" crossorigin="anonymous" />
         <script src="{{ asset('adm/js/cdn.js') }}" crossorigin="anonymous"></script>
+
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -18,10 +19,10 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                   {{--  <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
+                    </div>  --}}
                 </div>
             </form>
             <!-- Navbar-->
@@ -29,8 +30,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> {{ Auth::user()->lname }}</a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <a class="dropdown-item" href="{{ url('parent')}}">Become a Parent</a>
                         <div class="dropdown-divider"></div>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -53,7 +53,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{url('home')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -65,9 +65,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Waliomaliza Malipo</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Wanaodaiwa</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Tengeneza report</a>
+                                    <a class="nav-link" href="{{ url('payed')}}">Malipo</a>
+                                    <a class="nav-link" href="{{ url('mahudhurio')}}">Mahudurio</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -95,16 +94,15 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">Tengeneza kikosi</a>
+
                                             <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalc">MAGOLI</a>
-                                            <a class="nav-link" href="404.html">MCHEZAJI BORA</a>
-                                            <a class="nav-link" href="500.html">MAONI</a>
+
                                         </nav>
                                     </div>
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">KUTOKA KWA WADAU</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="{{ url('emails')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
                                 Emails
                             </a>
@@ -125,7 +123,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                            <div class="text-muted">Copyright &copy; Ksc 2020</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Player;
+use App\Contact;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +35,20 @@ class HomeController extends Controller
              join('users', 'players.parent_id', '=', 'users.id')
              ->get();
 
-            return view('home', compact('user'));
+             $count_players= Player::
+             join('users', 'players.parent_id', '=', 'users.id')
+             ->count();
+
+             $count_payed= Player::
+             join('users', 'players.parent_id', '=', 'users.id')
+             ->where('payment','Payed')
+             ->count();
+
+             $count_emails= Contact::
+             select('id')
+             ->count();
+
+            return view('home', compact('user','count_players','count_payed','count_emails'));
 
         }else
         {
@@ -49,6 +63,17 @@ class HomeController extends Controller
 
 
 
+
+    }
+    public function parent(){
+
+        $userId=Auth::user()->id;
+        $parent= Player::
+         join('users', 'players.parent_id', '=', 'users.id')
+         ->where('players.parent_id', $userId)
+         ->get();
+
+        return view('parent_home',compact('parent'));
 
     }
 }

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Player;
+use App\Atendance;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -46,13 +48,13 @@ class PlayersController extends Controller
     public function store(Request $request, Player $player)
     {
 
-        $userId=Auth::user()->id;
-        $user= Player::
-         join('users', 'players.parent_id', '=', 'users.id')
-         ->where('players.parent_id', $userId)
-         ->first();
+        // $userId=Auth::user()->id;
+        // $user= Player::
+        //  join('users', 'players.parent_id', '=', 'users.id')
+        //  ->where('players.parent_id', $userId)
+        //  ->first();
 
-        // $user = Player::where('fname', '=', Request::get('fname'))->first();
+        $user = Player::where('player_fname', '=', $request->get('player_fname'))->first();
         // $user = DB::table('players')->where('fname', $request->fname)->first();
 
 if ($user === null) {
@@ -76,7 +78,7 @@ if ($user === null) {
 
     Mail::send(['text'=>'mail'], $data, function($message) {
         $message->to('geofreynjavike2017@gmail.com', 'Mzazi Mpendwa')->subject('Taarifa za mwanao zimepokelewa');
-        $message->from('geofreynjavike@gmail.com', 'Ksc');
+        $message->from('graduatetz@gmail.com', 'Ksc');
     });
 
 
@@ -89,6 +91,74 @@ else{
 }
 
     }
+
+
+  public function malipo(Request $request, Player $player)
+    {
+
+       $userId=Auth::user()->id;
+        $user= Player::
+         join('users', 'players.parent_id', '=', 'users.id')
+         ->where('players.parent_id', $userId)
+         ->first();
+
+
+if (!empty($user) ) {
+
+        $data= array();
+    $data['kumbukumbu']=$request->kumbukumbu;
+    $data['usajili']=$request->usajili;
+     $data['payment']='Payed';
+
+
+    DB::table('players')->where('parent_id', $userId)->update($data);
+
+    $data = array('name'=>"Ksc");
+
+    Mail::send(['text'=>'malipo'], $data, function($message) {
+        $message->to('geofreynjavike@gmail.com', 'Habari Boss')->subject('Malipo Yamefanyika');
+        $message->from('graduatetz@gmail.com', 'Ksc');
+    });
+
+
+
+     return back()->with('success', 'Malipo Yamefanyika Kikamilifu!');
+}
+else{
+    return back()->with('success', 'Hujasajili Mtoto Tafadhari wasiliana nasi!');
+
+}
+
+    }
+
+public function paying(){
+
+    $pay= Player::
+             join('users', 'players.parent_id', '=', 'users.id')
+             ->get();
+
+  return  view('payed', compact('pay'));
+
+}
+
+public function mahudhurio(){
+
+
+   $date= DB::table('atendances')->select('created_at')->get();
+   
+    $atend= Atendance::
+             join('players', 'atendances.player_id', '=', 'players.player_id')->select('players.player_id','players.image','players.player_fname','players.player_lname','atendances.created_at','atendances.maendeleo')
+             ->get();
+
+       
+  return  view('admin.mahudhurio', compact('atend','date'));
+
+
+
+
+}
+
+
 
     /**
      * Display the specified resource.
@@ -155,6 +225,8 @@ $dt3 =$dt->diffInYears($age0);
         $data['position']=$request->position;
         $data['foot']=$request->foot;
         $data['jezi']=$request->jezi;
+         $data['chenga']=$request->chenga;
+          $data['nguvu']=$request->nguvu;
         $image= $request->file('image');
 
         if ($image) {
@@ -196,7 +268,7 @@ public function send_aprove(Player $player, $id){
 
     Mail::send(['text'=>'mail'], $data, function($message) {
         $message->to('geofreynjavike2017@gmail.com', 'Mzazi Mpendwa')->subject('Usajili wa Mwanao Umekamilika');
-        $message->from('geofreynjavike@gmail.com', 'Ksc');
+        $message->from('graduatetz@gmail.com', 'Ksc');
     });
 
 
