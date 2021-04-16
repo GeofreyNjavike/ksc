@@ -323,67 +323,29 @@
                   <h3>Matt Brandon</h3>
                   <h4>Freelancer</h4>
                 </div>
-              </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4" style="width: 358px; margin-right: 20px;" role="group" aria-label="2 / 9">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Keno</h3>
-                  <h4>Entrepreneur</h4>
-                </div>
               </div>
 
-              <div class="swiper-slide" data-swiper-slide-index="0" style="width: 358px; margin-right: 20px;" role="group" aria-label="3 / 9">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>John Madosh</h3>
-                  <h4>Manager</h4>
-                </div>
-              </div><!-- End testimonial item -->
+             
 
 
 
 
-              @foreach ($player as $a )
+              @foreach ($users as $a )
               <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3" style="width: 358px; margin-right: 20px;" role="group" aria-label="6 / 9">
                 <div class="testimonial-item">
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     <div class="row">
                       <div class="col-sm-5">
-                        <p>Jina: <b>{{ $a->player_fname}}</b></p>
+                        <p>{{$a->ushuhuda}}</p>
                       </div>
-                      <div class="col-sm-1">
 
-                      </div>
-                      <div class="col-sm-5">
-                        <p>Jezi:<b> {{ $a->jezi}} </b></p>
-                      </div>
                     </div>
-                    <div class="row">
-                      <div class="col-sm-5">
-                        <p>Chenga:<b>{{ $a->chenga}} /10</b></p>
-                      </div>
-                      <div class="col-sm-1">
 
-                      </div>
-                      <div class="col-sm-5">
-                        <p>Nguvu: <b>{{ $a->nguvu}}/10</b></p>
-                      </div>
-                    </div>
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
-                  <img src="{{ asset('storage/app/public/players/'.$a->image) }}" class="testimonial-img" alt="">
-                  <h3>{{ $a->player_fname }}</h3>
-                  <h4>{{ $a->position }}</h4>
+                  <img src="{{ asset('storage/app/public/parents/'.$a->parent_image) }}" class="testimonial-img" alt="">
+                  <h3> <b></b>{{ $a->fname}} {{$a->lname}}</h3>
+   <h4>Mzazi</h4>
                 </div>
               </div><!-- End testimonial item -->
               @endforeach

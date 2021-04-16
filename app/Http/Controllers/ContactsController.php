@@ -25,6 +25,8 @@ class ContactsController extends Controller
      */
     public function index()
     {
+
+        $users = DB::table('users')->get();
         // get the current time
 $current = Carbon::now();
 
@@ -42,7 +44,7 @@ $infoExpires = $current->addDays();
         $mails = DB::table('contacts')->count();
 
 
-        return view('welcome', compact('player','info','events','players','mails','failed'));
+        return view('welcome', compact('player','info','events','players','mails','users'));
     }
     
 
