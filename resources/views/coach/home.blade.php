@@ -1,4 +1,4 @@
-@extends('layouts.admin.njavike')
+@extends('layouts.coach.kuharibu')
 
 @section('content')
 
@@ -24,7 +24,7 @@
     </div>
     @endif
         <div class="row">
-        <div class="col-xl-2 col-md-6">
+        <div class="col-xl-4 col-md-6">
         </div>
             <div class="col-xl-3 col-md-6">
             <div class="card-body">
@@ -35,26 +35,9 @@
                 </div>
               </div>
         </div>
-            <div class="col-xl-3 col-md-6">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4"><i class="far fa-futbol"></i></div>
-                    <div class="text-value"  style="font-size:30px;">{{ $count_payed }}</div><small class="text-muted text-uppercase font-weight-bold">Waliomaliza Malipo</small>
-                    <div class="progress progress-xs mt-3 mb-0">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-            </div>
+           
 
-            <div class="col-xl-3 col-md-6">
-
-            <div class="card-body">
-                <div class="h1 text-muted text-right mb-4"><i class="far fa-comments"></i></i></div>
-                <div class="text-value" style="font-size:30px;">{{ $count_emails}}</div><small class="text-muted text-uppercase font-weight-bold">EMAILS</small>
-                <div class="progress progress-xs mt-3 mb-0">
-                  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              <div></div></div>
-            </div>
+            
               <style>
                 .card-body {
                     -ms-flex: 1 1 auto;
@@ -71,7 +54,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="font-size: 10px;">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="font-size:10px;">
                     <thead>
                         <tr>
 
@@ -110,18 +93,18 @@
                         <tr>
 
                             <td >
-                                <a style="font-size: 10px" class="btn btn-danger" href="{{  URL::to('detele/player/'.$value->player_id) }}"  onclick="return confirm('YOU ABOUT TO DELETE A PLAYER, Are You Sure?')"><i class="fas fa-trash-alt"></i>Delete
+                              {{--   <a class="btn btn-danger" href="{{  URL::to('detele/player/'.$value->player_id) }}"  onclick="return confirm('YOU ABOUT TO DELETE A PLAYER, Are You Sure?')"><i class="fas fa-trash-alt"></i>
+                                </a> --}}
+                                <a style="font-size: 10px;" class="btn btn-info" href="{{  URL::to('edit/player/'.$value->player_id) }}"  onclick="return confirm('Are You Sure?')"><i class="fas fa-edit"></i>Edit
                                 </a>
-                                <a style="font-size: 10px" class="btn btn-info" href="{{  URL::to('edit/player/'.$value->player_id) }}"  onclick="return confirm('Are You Sure?')"><i class="fas fa-edit"></i>Edit
-                                </a>
-
+{{-- 
                              @if ( $value->progress == 'Aproved')
-                                <a  style="font-size: 10px" class="btn btn-success"  >Done
+                                <a  class="btn btn-success"  >Done
                                 </a>
                                 @else
-                                <a style="font-size: 10px" href="{{ URL::to('change/status/'.$value->player_id) }}" class="btn btn-warning"  > <i class="fas fa-check"></i>Aprove
+                                <a href="{{ URL::to('change/status/'.$value->player_id) }}" class="btn btn-warning"  >Aprove
                                 </a>
-                                @endif
+                                @endif --}}
 
                             </td>
                             <td>{{ $value->player_fname }} {{ $value->player_lname }}</td>
@@ -214,79 +197,11 @@
 
 
     <!-- Modal 2-->
-    <div class="modal fade" id="exampleModalx" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;"  >USERS</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-
-          <div class="modal-body">
-           
-<div class="row">
-    <div class="card mb-4">
-        <div class="card-header">
-            <i class="fas fa-table mr-1"></i>
-        THE USERS LIST
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="font-size: 10px;">
-                    <thead>
-                        <tr>
-
-                            <th>Actions</th>
-                            <th>Names</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Position</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @foreach ($userz as $value )
-                        <tr>
-
-                            <td >
-                                <a style="font-size: 10px" class="btn btn-danger" href="{{  URL::to('detele/user/'.$value->id) }}"  onclick="return confirm('YOU ABOUT TO DELETE A USER, Are You Sure?')"><i class="fas fa-trash-alt"></i>Delete
-                                </a>
-                            </td>
-                            <td>{{ $value->fname }} {{ $value->lname }}</td>
-                            <td><a href="tel:{{ $value->phone }}">{{ $value->phone }}</a></td>
-                            <td><a  href="mailto:{{ $value->email }}">{{ $value->email }}</a></td>
-
-                            <td>Coach</td>
-
-                        </tr>
-                        @endforeach
-
-
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-    </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 2-->
     <div class="modal fade" id="exampleModaly" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;"  >Tengeneza</h5>
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;"  >Tengeneza Tukio(Event)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -353,7 +268,6 @@
     </div>
 
 
-
     <!-- Modal 3-->
     <div class="modal fade" id="exampleModald" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -366,8 +280,6 @@
           </div>
 
           <div class="modal-body">
-
-
             <form action="{{ url('taarifa') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
@@ -418,105 +330,195 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">ADD USER</h5>
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">Maendeleo Ya Mchezaji</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
 
           <div class="modal-body">
-            <form action="{{ url('addUser') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('magoli') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="container jumbotron">
                         <div class="form-row">
-                          
                             <div class="col-md-6">
-                                <label for="fname" class="small mb-1 col-form-label text-md-right">{{ __('First Name') }}</label>
 
-                                <input id="fname" type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}" required autocomplete="fname" autofocus>
+                                <div class="form-group">
+                                    <label class="small mb-1" >Jina la Mchezaji:</label>
+                                    <select name="player_fname" id="player_fname" class="form-select" >
 
-                                @error('fname')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    @foreach ($user as $value )
+
+                                        <option value="{{ $value->player_id }}" >{{ $value->player_fname }}</option>
+
+
+                                    @endforeach
+                                </select>
+                                </div>
                             </div>
-                           
-
                             <div class="col-md-6">
-                                 <label for="lname" class="small mb-1 col-form-label text-md-right">{{ __('Last Name') }}</label>
-                                <input id="lname" type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus>
-
-                                @error('lname')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <div class="form-group">
+                                    <label class="small mb-1" >Idadi Ya Magoli</label>
+                                    <input required class="form-control py-4" name="magoli"  type="number"  required/>
+                                </div>
                             </div>
                         </div>
+
+
+         <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                         <label for="sel1">Passing:</label>
+  <select class="form-control" id="sel1" name="passing">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                          <label for="sel1">Dribbling:</label>
+  <select class="form-control" id="sel1" name="dribbling">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                             <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                         <label for="sel1">Receiving:</label>
+  <select class="form-control" id="sel1" name="receiving">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                          <label for="sel1">Turning:</label>
+  <select class="form-control" id="sel1" name="turning">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                              <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                         <label for="sel1">Shooting:</label>
+  <select class="form-control" id="sel1" name="shooting">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                          <label for="sel1">Running:</label>
+  <select class="form-control" id="sel1" name="running">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+<div class="row">
+    <div class="col-md-12">
+                                                    <div class="form-group">
+                                                          <label for="sel1">Jaggling:</label>
+  <select class="form-control" id="sel1" name="jaggling">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+ 
+  </select>
+                                                    </div>
+                                                </div>
+</div>
 
                         <div class="form-row">
                             <div class="col-md-6">
 
                                 <div class="form-group">
-                                    <label class="small mb-1 col-form-label text-md-right" >Clearance Level:</label>
-                                    <select id="inputState" class="form-control" name="clearance_level">
-                              <option selected>10</option>
-                              <option>5</option>
-                              <option>1</option>
-                            </select>
-
+                                    <label class="small mb-1" >Maoni Ya Kocha:</label>
+                                    <input required class="form-control py-4" name="maoni"  type="text"  required/>
                                 </div>
                             </div>
-                            
-
                             <div class="col-md-6">
-
-                                <label for="email" class="small mb-1 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <div class="form-group">
+                                    <label class="small mb-1" >Tarehe</label>
+                                    <input required class="form-control py-4" name="tarehe_ya_magoli"  type="date"  required/>
+                                </div>
                             </div>
                         </div>
-                           
 
 
 
-                                <div class="form-row">
-                                    
-                            <div class="col-md-6">
-<label for="phone" class="small mb-1 col-form-label text-md-right">{{ __('Phone Number') }}</label>
-
-                                <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus placeholder="+255">
-
-                                @error('phone')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+ <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" >YOUTUBE URL</label>
+                                    <input required class="form-control py-4" name="url"  type="text"  required/>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-
-                                <label for="password" class="small mb-1 col-form-label text-md-right">{{ __('Password') }}</label>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-
-                            </div> 
-
-
-
                           </div>
                   </div>
 

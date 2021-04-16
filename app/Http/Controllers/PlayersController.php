@@ -180,11 +180,7 @@ public function mahudhurio(){
     public function edit(Player $player, $id)
     {
 
-//         $dateOfBirth = '1994-07-02';
 
-// $years = Carbon::parse($dateOfBirth)->age;
-// $myDate= $player['dob']->where('player_id',$id)->select('dob')->where('player_id',$id)->first();
-// $years= Carbon::parse($myDate)->diff(Carbon::now())->format('%y years');
 
 $dt= Carbon::now();
 
@@ -215,6 +211,31 @@ $dt3 =$dt->diffInYears($age0);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function update1(Request $request)
+    {
+        $userId = Auth::user()->id;
+        $data= array();
+        $data['ushuhuda']=$request->ushuhuda;
+
+        $image= $request->file('parent_image');
+
+        if ($image) {
+
+            unset($oldimage);
+
+            $image_name= date('YmdHis').rand(1, 9999);
+            $ext = strtolower($image->getClientOriginalExtension());
+            $image_full_name = $image_name. '.'.$ext;
+            $image->storeAs('public/parents', $image_full_name);
+
+            $data['parent_image']=$image_full_name;
+             DB::table('users')->where('id', $userId)->update($data);
+
+            return back()->with('success', 'Testmony Added Succefully');
+        }
+
+    }
     public function update(Request $request, $id)
     {
         $oldimage = $request->old;
@@ -230,7 +251,9 @@ $dt3 =$dt->diffInYears($age0);
         $image= $request->file('image');
 
         if ($image) {
+
             unset($oldimage);
+
             $image_name= date('YmdHis').rand(1, 9999);
             $ext = strtolower($image->getClientOriginalExtension());
             $image_full_name = $image_name. '.'.$ext;
@@ -244,8 +267,8 @@ $dt3 =$dt->diffInYears($age0);
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  int  $id
+     
+          * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -281,4 +304,5 @@ public function send_aprove(Player $player, $id){
 
 
 }
+
 }

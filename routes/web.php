@@ -17,6 +17,8 @@ Auth::routes();
 
 Route::get('/', 'ContactsController@index')->name('/');
 
+Route::get('/taarifa/{id}', 'NewsController@show')->name('news');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -33,12 +35,20 @@ Route::get('mahudhurio','PlayersController@mahudhurio');
 
 Route::get('detele/player/{id}','PlayersController@destroy');
 
+Route::get('showPlayer/{id}','GoalsController@show');
+
+
 Route::get('detele/email/{id}','ContactsController@destroy');
 
 
 Route::get('edit/player/{id}','PlayersController@edit');
 
 Route::post('update/player/{id}','PlayersController@update');
+
+Route::post('testmony','PlayersController@update1');
+
+Route::post('addUser','HomeController@addUser');
+
 
 Route::get('change/status/{id}','PlayersController@send_aprove');
 

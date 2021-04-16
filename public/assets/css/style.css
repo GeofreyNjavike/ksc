@@ -732,7 +732,12 @@ section {
 --------------------------------------------------------------*/
 
 .why-us {
-    padding: 0;
+    padding-top: 10px;
+}
+
+.why-us .portfolio-info {
+    padding: 30px;
+    box-shadow: 0px 0 30px rgba(11, 35, 65, 0.08);
 }
 
 .why-us .content {
@@ -740,8 +745,11 @@ section {
 }
 
 .why-us .content h3 {
-    font-weight: 400;
-    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 3px;
     color: #123a6d;
 }
 
@@ -769,12 +777,13 @@ section {
 }
 
 .why-us .accordion-list ul {
-    padding: 0;
     list-style: none;
+    padding: 0;
+    font-size: 15px;
 }
 
 .why-us .accordion-list li+li {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .why-us .accordion-list li {
@@ -1186,20 +1195,20 @@ section {
 # Portfolio Details
 --------------------------------------------------------------*/
 
-.portfolio-details {
+.why-us {
     padding-top: 40px;
 }
 
-.portfolio-details .portfolio-details-slider img {
+.why-us .why-us-slider img {
     width: 100%;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
+.why-us .why-us-slider .swiper-pagination {
     margin-top: 20px;
     position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.why-us .why-us-slider .swiper-pagination .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
     background-color: #fff;
@@ -1207,16 +1216,16 @@ section {
     border: 1px solid #0077be;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.why-us .why-us-slider .swiper-pagination .swiper-pagination-bullet-active {
     background-color: #0077be;
 }
 
-.portfolio-details .portfolio-info {
+. .portfolio-info {
     padding: 30px;
     box-shadow: 0px 0 30px rgba(11, 35, 65, 0.08);
 }
 
-.portfolio-details .portfolio-info h3 {
+.why-us h3 {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -1224,28 +1233,28 @@ section {
     border-bottom: 1px solid #eee;
 }
 
-.portfolio-details .portfolio-info ul {
+.why-us .portfolio-info ul {
     list-style: none;
     padding: 0;
     font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.why-us .portfolio-info ul li+li {
     margin-top: 10px;
 }
 
-.portfolio-details .portfolio-description {
+.why-us .portfolio-description {
     padding-top: 30px;
 }
 
-.portfolio-details .portfolio-description h2 {
+.why-us .portfolio-description h2 {
     font-size: 26px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.portfolio-details .portfolio-description p {
-    padding: 0;
+.why-us .portfolio-description p {
+    padding: 10px;
 }
 
 

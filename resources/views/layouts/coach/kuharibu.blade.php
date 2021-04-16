@@ -14,12 +14,12 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">KSC</a>
+            <a class="navbar-brand" href="{{url('/')}}">KSC</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
-                 {{--  <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" /> --}}
+                   {{--  <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
                     </div>  --}}
@@ -30,8 +30,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> {{ Auth::user()->lname }}</a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="{{ url('home')}}">Home</a>
-                        <a class="dropdown-item" href="{{ url('parent')}}">Become A Parent</a>
+                        <a class="dropdown-item" href="{{ url('parent')}}">Become a Parent</a>
                         <div class="dropdown-divider"></div>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -54,7 +53,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 
-                            <a class="nav-link" href="{{ url('home')}}">
+                            <a class="nav-link" href="{{url('home')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -66,14 +65,44 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                             {{--        <a class="nav-link" href="{{ url('payed')}}">Malipo</a> --}}
+                         
                                     <a class="nav-link" href="{{ url('mahudhurio')}}">Mahudurio</a>
                                 </nav>
                             </div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                KURASA
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Post
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModald">Tengeneza Taarifa</a>
+                                            <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModaly">Tengeneza Tukio</a>
+                                            <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalz">Atendance</a>
 
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Kocha
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
 
+                                            <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalc">Maendeleo</a>
+
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
                             <div class="sb-sidenav-menu-heading">KUTOKA KWA WADAU</div>
-                           {{--  <a class="nav-link" href="{{url('emails')}}">
+                          {{--   <a class="nav-link" href="{{ url('emails')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
                                 Emails
                             </a> --}}
@@ -85,8 +114,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Administrator | Coach
-                    </div>
+                        Coach
                 </nav>
             </div>
             <div id="layoutSidenav_content">
@@ -114,6 +142,5 @@
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('adm/assets/demo/datatables-demo.js') }}"></script>
-
     </body>
 </html>

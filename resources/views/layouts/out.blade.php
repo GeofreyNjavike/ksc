@@ -52,7 +52,6 @@
 <li><a class="nav-link scrollto" href="#news">Taarifa</a></li>
               <li><a class="nav-link scrollto" href="#team">Team</a></li>
               <li><a class="nav-link scrollto" href="#contact">Mawasiliano</a></li>
-              <li><a class="nav-link scrollto" href="#services">Huduma</a></li>
               <li><a class="nav-link scrollto " href="{{ url('squard') }}">Wachezaji</a></li>
               <li class="dropdown"><a href="#"><span>Profile</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -74,14 +73,7 @@
                 </ul>
               </li>
 
-              <li class="dropdown"><a href="#"><span>Jiunge Nasi</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                      <li><a href="{{ url('home')}}">Msajili Mwanao</a></li>
-                      <li><a href="#services">Tutembelee</a></li>
-                      <li><a href="#contact">Tupigie</a></li>
-
-                    </ul>
-                  </li>
+          
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>

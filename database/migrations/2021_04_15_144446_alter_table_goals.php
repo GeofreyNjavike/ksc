@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EditGoalsTable extends Migration
+class AlterTableGoals extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class EditGoalsTable extends Migration
     public function up()
     {
         Schema::table('goals', function (Blueprint $table) {
-            $table->string('url')->nullable();
+            $table->string('jaggling')->nullable();
            
 
 

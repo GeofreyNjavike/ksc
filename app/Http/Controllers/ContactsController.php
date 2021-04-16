@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use App\Info;
 use App\Event;
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\AssignOp\Concat;
 use Illuminate\Support\Facades\DB;
@@ -24,9 +25,15 @@ class ContactsController extends Controller
      */
     public function index()
     {
+        // get the current time
+$current = Carbon::now();
+
+// add 30 days to the current time
+$infoExpires = $current->addDays();
+
         $player = DB::table('players')->where('progress','Aproved')->get();
 
-        $info = DB::table('infos')->get();
+        $info = DB::table('infos')->where('created_at','<',$infoExpires )->get();
 
         $events = DB::table('events')->get();
 
@@ -34,8 +41,10 @@ class ContactsController extends Controller
 
         $mails = DB::table('contacts')->count();
 
-        return view('welcome', compact('player','info','events','players','mails'));
+
+        return view('welcome', compact('player','info','events','players','mails','failed'));
     }
+    
 
     /**
      * Show the form for creating a new resource.

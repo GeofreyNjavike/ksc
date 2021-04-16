@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EditGoalsTable extends Migration
+class AlterTableUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class EditGoalsTable extends Migration
      */
     public function up()
     {
-        Schema::table('goals', function (Blueprint $table) {
-            $table->string('url')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('ushuhuda')->nullable();
+            $table->string('parent_image')->nullable();
            
 
 

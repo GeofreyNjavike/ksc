@@ -40,8 +40,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Majina</th>
+                                    <th>Usajili</th>
+                                     <th>Maendeleo ya Mwanao</th>
                                     <th>MALIPO</th>
-                                    <th>Maendeleo</th>
                                     <th>Date Of Birth</th>
                                     <th>Weight</th>
                                     <th>Height</th>
@@ -59,40 +60,44 @@
                                 <tr>
                                     <td>{{ $value->player_id }}</td>
                                     <td>{{ $value->player_fname }}  {{ $value->player_lname }}</td>
-                                    <td>
-                                        
-@if($value->payment == 'Payed')
-                                            <a class="btn btn-success" data-toggle="modal" metho="post" >{{ $value->payment }}
-                                            </a>
-
-                                           @else
-
-                                            <a class="btn btn-warning" data-toggle="modal" metho="post" > {{ $value->payment }}
-                                        </a>
-
-                                           @endif
-
-                                    </td>
-                                    <td>
+                                    
+                                    <td >
 
                                         @if($value->progress == 'Pending')
-                                            <a class="btn btn-warning" data-toggle="modal" metho="post" >{{ $value->progress }}
+                                            <a style="font-size: 10px;" class="btn btn-warning" data-toggle="modal" metho="post" >{{ $value->progress }}
                                             </a>
 
 
                                             @elseif($value->progress == 'Declined')
 
-                                            <a class="btn btn-danger" data-toggle="modal" metho="post" > {{ $value->progress }}
+                                            <a   style="font-size: 10px" ; class="btn btn-danger" data-toggle="modal" metho="post" > {{ $value->progress }}
                                             </a>
 
                                            @else
 
-                                            <a class="btn btn-info" data-toggle="modal" metho="post" > {{ $value->progress }}
+                                            <a   style="font-size: 10px;" class="btn btn-info" data-toggle="modal" metho="post" > {{ $value->progress }}
                                         </a>
 
                                            @endif
 
+
                                 </td>
+                              <td><a href="{{url('showPlayer/'.$value->player_id)}}" class="btn btn-info btn-lg" style="font-size: 10px;"><i class="fas fa-eye"></i> View</a></td>
+                                    <td>
+                                        
+@if($value->payment == 'Payed')
+                                            <a style="font-size: 10px" class="btn btn-success" data-toggle="modal" metho="post" >{{ $value->payment }}
+                                            </a>
+
+                                           @else
+
+                                            <a style="font-size: 10px" class="btn btn-warning" data-toggle="modal" metho="post" > {{ $value->payment }}
+                                        </a>
+
+                                           @endif
+
+                                    </td>
+                            
                                     <td>{{ $value->dob }}</td>
                                     <td>{{ $value->weight }}</td>
                                     <td>{{ $value->height }}</td>
@@ -164,13 +169,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="small mb-1" >Uzito</label>
-                                                    <input class="form-control py-4" name="weight" id="inputFirstName" type="text" placeholder="Enter weight" />
+                                                    <input class="form-control py-4" name="weight" id="inputFirstName" type="text" placeholder="Enter weight (Kg)" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="small mb-1" >Urefu</label>
-                                                    <input class="form-control py-4" name="height" id="inputLastName" type="text" placeholder="Enter height" />
+                                                    <label class="small mb-1" >Urefu  </label>
+                                                    <input class="form-control py-4" name="height" id="inputLastName" type="text" placeholder="Enter height (CM)" />
                                                 </div>
                                             </div>
                                         </div>
@@ -541,6 +546,74 @@
 
 
 
+    <!-- Modal 2-->
+    <div class="modal fade" id="exampleModalk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;"  >Toa ushuhuda Juu ya KSC</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+           
+ <form action="{{ url('testmony') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="container jumbotron">
+                       
+
+                        <div class="form-row">
+                           
+
+                                    
+                            <div class="col-md-12">
+<label for="phone" class="small mb-1 col-form-label text-md-right">{{ __('Shuhuda') }}</label>
+
+                                <textarea id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="ushuhuda" value="{{ old('ushuhuda') }}" required autocomplete="ushuhuda" autofocus placeholder="+255" >
+                                    
+
+                                @error('ushuhuda')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                </textarea>
+
+                            </div>
+                          
+   <div class="col-md-12">
+
+                                <label for="parent_image" class="small mb-1 col-form-label text-md-right">{{ __('Picha Yako') }}</label>
+                                <input id="parent_image" type="file" class="form-control @error('parent_image') is-invalid @enderror" name="parent_image" required autocomplete="new-parent_image">
+
+                                @error('parent_image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+
+                          </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input required type="submit"  value="save"  class="btn btn-secondary" style="background-color:  #4F42B5;">
+                  </div>
+
+            </form>
+
+
+
+    </div>
+
+        </div>
+      </div>
+    </div>
 
 </main>
 @endsection

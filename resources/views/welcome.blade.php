@@ -12,9 +12,9 @@
         <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown" style="text-align: center">Karibu <span><b>Kisota Community Sports Center</b></Center></span></h2>
-              <p class="animate__animated animate__fadeInUp">Kwasababu ya miji kukua na changamoto kama usalama watoto wanafungiwa kwenye mageti na wanaenda na kurudi kutoka shule kwa magari hawapati nafasi ya kuchaza na kujichanganya na wenzao mtaani</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <h2 class="animate__animated animate__fadeInDown" style="text-align: center;">Karibu <span><b>Kisota Community Sports Center</b></span></h2>
+              <p class="animate__animated animate__fadeInUp">Kwasababu ya miji kukua na changamoto kama usalama watoto wanafungiwa kwenye mageti na wanaenda na kurudi kutoka shule kwa magari hawapati nafasi ya kucheza na kujichanganya na wenzao mtaani</p>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Karibu>>></a>
             </div>
           </div>
         </div>
@@ -23,9 +23,9 @@
         <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Ifanye Ndoto Iwe Kweli</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <h2 class="animate__animated animate__fadeInDown">Timiza  Ndoto za Mwanao Mpe nafasi ya Kucheza na kukua</h2>
+              <p class="animate__animated animate__fadeInUp">I have found the best way to give advice to your children is to find out what they want and then advise them to do it.</p>
+              <a href="{{ url('home')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Msajili Mwanao...</a>
             </div>
           </div>
         </div>
@@ -34,9 +34,9 @@
         <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <h2 class="animate__animated animate__fadeInDown">We must teach our children to dream with their eyes open. </h2>
+              <p class="animate__animated animate__fadeInUp">If you want your children to be intelligent, read them fairy tales. If you want them to be more intelligent, read them more fairy tales.</p>
+              <a href="{{url('home')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Register your child>>></a>
             </div>
           </div>
         </div>
@@ -109,46 +109,18 @@
 
 
 
-  <section id="counts" class="counts">
-    <div class="container aos-init aos-animate" data-aos="fade-up">
+      <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
 
-      <div class="row no-gutters">
-        <div class="col-lg-2 col-md-6 d-md-flex align-items-md-stretch">
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-          <div class="count-box">
-            <i class="bi bi-emoji-smile"></i>
-            <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="0" class="purecounter">{{ $mails }}</span>
-            <p><strong>Parent Reqquests</strong>Wazazi wanasajili watoto wao kila siku,</p>
-            <a href="{{ url('home') }}">Karibu »</a>
-          </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-          <div class="count-box">
-            <i class="bi bi-headset"></i>
-            <span data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="0" class="purecounter">1600-1800</span>
-            <p><strong>Muda wa Mazoezi</strong> Wakiongozwa na Makocha na wakufunzi wazuri, Muda wa mazoezi ni </p>
-            <a href="{{ url('home') }}">Jiunge nasi. »</a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-          <div class="count-box">
-            <i class="bi bi-people"></i>
-            <span data-purecounter-start="0" data-purecounter-end="37" data-purecounter-duration="0" class="purecounter">{{ $players }}</span>
-            <p><strong>Idadi ya Watoto Waliosajiliwa</strong> Kila siku watoto wanasajiliwa, Unasubri nini...?</p>
-            <a href="{{ url('home') }}">Karibu Umsajili Mwanao... »</a>
-          </div>
+        <div class="text-center">
+          <h3>Chukua Hatua</h3>
+          <p> Tupo kukusikiliza na kukusaidia katika kuijenga afya ya mwanao na kuimarisha taifa lijalo, Karibu Kisota Community sports center, Sehemu sahihi kwaajili ya mafunzo ya michezo kwa mwanao.</p>
+          <a class="cta-btn" href="{{url('home')}}">Call To Action</a>
         </div>
 
       </div>
-
-    </div>
-  </section>
-
+    </section><!-- End Cta Section -->
 
 
   <section id="news" class="testimonials section-bg">
@@ -166,10 +138,11 @@
 
                                     <div class="card-body">
                                         <h5 class="card-title">Matangazo</h5>
+                                        <hr>
                                         <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner">
                                                 <div class="carousel-item active">
-                                                    <img class="d-block w-100" style="height: 400px; width: 100%" src="{{ asset('storage/app/public/events/1.jpg') }}" alt="First slide">
+                                                    <img class="d-block w-100 rounded" style="height: 400px; width: 100%" src="{{ asset('storage/app/public/events/1.jpg') }}" alt="First slide">
                                                 </div>
                                                @foreach($events as $ev)
 
@@ -178,7 +151,7 @@
 
 
 <div class="container1">
- <img class="d-block w-100" style="height: 400px; width: 100%" src="{{ asset('storage/events/'.$ev->image) }}"  alt="Second slide">
+ <img class="d-block w-100" style="height: 400px; width: 100%" src="{{ asset('storage/events/'.$ev->image) }}"  alt="Second slide" class="rounded">
   <div class="bottom-left">{{ $ev->tarehe}}</div>
   <div class="bottom-right">{{$ev->mahali}}</div>
   <div class="centered1">{{ $ev->tukio}}</div>
@@ -196,6 +169,7 @@
 
 /* Bottom left text */
 .bottom-left {
+    font-weight: 900;
   position: absolute;
   bottom: 8px;
   left: 16px;
@@ -217,6 +191,7 @@
 
 /* Bottom right text */
 .bottom-right {
+    font-weight: 900;
   position: absolute;
   bottom: 8px;
   right: 16px;
@@ -224,6 +199,8 @@
 
 /* Centered text */
 .centered1 {
+  font-weight: 900;
+  font-size: 30px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -253,7 +230,7 @@
                                         <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
 
                                                <iframe width="100%" height="430"
-              src="https://www.youtube.com/embed/foiOZCm5Ooc">
+              src="https://www.youtube.com/embed/foiOZCm5Ooc" class="rounded">
               </iframe>
 
 
@@ -266,14 +243,16 @@
             <div class="col-lg-8">
 
 <h5 class="card-title">Habari</h5>
+<hr>
 
-           @foreach ($info  as $info)
+
+@foreach ($info  as $info)
 
                 <div class="row">
 
                 <div class="col-sm-5">
 
-                  <img  src="{{ asset('storage/app/public/infos/'.$info->faili) }}"  alt="" class="img-thumbnail" style="height: 100%; width: 100%;"  >
+                  <img  src="{{ asset('storage/app/public/infos/'.$info->faili) }}"  alt="" class="rounded" style="height: 100%; width: 100%;"  >
 
 
 
@@ -290,7 +269,9 @@
 <span>{{ $info->created_at}}</span></p>
                      <hr/>
                     <div class="col-sm-12">
-                       <p> {{$info->ujumbe}}</p>
+                   
+                       <p> {{$info->ujumbe}}  </p><span><a href="{{URL:: to('taarifa/'.$info->id)}}">Read more >>></a></span>
+
                     </div>
                   </div>
 
@@ -300,6 +281,10 @@
 
            @endforeach
 
+   
+
+               
+       
           </div>
           </div>
 
@@ -311,8 +296,8 @@
 
       <div class="row">
         <div class="section-title aos-init aos-animate" data-aos="fade-right">
-            <h2>Timu</h2>
-            <p>Timu</p>
+            <h2>Testimonials</h2>
+            <p>Testimonials</p>
           </div>
         <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 
@@ -414,6 +399,9 @@
 
     </div>
   </section>
+
+
+
 
 
 
