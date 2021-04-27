@@ -1,10 +1,20 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Goal;
 use Illuminate\Http\Request;
+use PDF;
+use App\Atendance;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
+
+use App\Goal;
+
+
 use App\Info;
 
 use App\Player;
@@ -46,9 +56,39 @@ class GoalsController extends Controller
         ->where('goals.player_id',$id)
         ->get();
 
-        return  view('player', compact('player_news','info'));
+        $userId=Auth::user()->id;
+
+        $days_attended= Player::
+        join('users', 'players.parent_id', '=', 'users.id')
+        ->join('atendances', 'atendances.player_id', '=', 'players.player_id')
+        ->where('players.player_id', '=', $id)
+        ->where('players.parent_id', $userId)
+        ->where('atendances.maendeleo', '=', 'yupo')
+        ->count();
+
+        return  view('player', compact('player_news','info','days_attended'));
         
      
+    }
+    public function downloadInvoice($id){
+        
+        $user= Player::
+        join('users', 'players.parent_id', '=', 'users.id')
+        ->where('players.player_id', '=',$id)
+        ->get();
+
+        $userId=Auth::user()->id;
+
+        $days_attended= Player::
+        join('users', 'players.parent_id', '=', 'users.id')
+        ->join('atendances', 'atendances.player_id', '=', 'players.player_id')
+        ->where('players.player_id', '=', $id)
+        ->where('players.parent_id', $userId)
+        ->where('atendances.maendeleo', '=', 'yupo')
+        ->count();
+
+$pdf=PDF::loadview('admin.invoice', compact('user','days_attended'))->setOptions(['defaultFont' => 'sans-serif']);
+return $pdf->download('invoice.pdf');
     }
 
 }

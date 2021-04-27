@@ -42,4 +42,11 @@ class EventsController extends Controller
         $event->save();
         return redirect()->route('home');
     }
+
+    public function show(){
+
+        $events = Event::select('*')->orderBy('created_at')->get();
+
+        return view('admin.events',compact('events'));
+    }
 }

@@ -410,6 +410,112 @@
       </div>
     </div>
 
+ <!-- Modal 3-->
+    <div class="modal fade" id="exampleModalhr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">TENGENEZA HERO/SLIDER CONTENT</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+
+
+            <form action="{{ url('hero') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="container jumbotron">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Kichwa:</label>
+                                    <input class="form-control py-4" name="hero_head"   id="inputFirstName" type="text"  required/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Picha</label>
+                                    <input class="form-control py-4" name="hero_image"  type="file"  />
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Ujumbe:</label>
+                                    <textarea class="form-control py-4" name="hero_content"   id="inputFirstName" type="textarea"></textarea>
+                                </div>
+                            </div>
+
+
+
+                          </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input required type="submit"  value="save"  class="btn btn-secondary" style="background-color:#4F42B5">
+                  </div>
+
+            </form>
+    </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Modal 3-->
+    <div class="modal fade" id="exampleModalab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">TENGENEZA ABOUT US CONTENT</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+
+
+            <form action="{{ url('about_us') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="container jumbotron">
+                    
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Kichwa:</label>
+                                    <input class="form-control py-4" name="about_head"   id="inputFirstName" type="text"  required/>
+                                </div>
+                            </div>
+                       
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Ujumbe:</label>
+                                    <textarea class="form-control py-4" name="about_content"   id="inputFirstName" type="textarea"></textarea>
+                                </div>
+                            </div>
+
+
+
+                          </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input required type="submit"  value="save"  class="btn btn-secondary" style="background-color:#4F42B5">
+                  </div>
+
+            </form>
+    </div>
+
+        </div>
+      </div>
+    </div>
 
 
 

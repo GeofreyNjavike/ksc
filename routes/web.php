@@ -35,7 +35,13 @@ Route::get('mahudhurio','PlayersController@mahudhurio');
 
 Route::get('detele/player/{id}','PlayersController@destroy');
 
+Route::get('delete/user/{id}','PlayersController@destroyuser');
+
 Route::get('showPlayer/{id}','GoalsController@show');
+
+Route::get('showMahudhurio/{id}','PlayersController@showMahudhurio');
+
+Route::get('downloadInvoice/{id}','GoalsController@downloadInvoice');
 
 
 Route::get('detele/email/{id}','ContactsController@destroy');
@@ -56,6 +62,10 @@ Route::post('customer/contact','ContactsController@store');
 
 Route::get('emails','ContactsController@show');
 
+Route::get('events','EventsController@show');
+
+Route::get('infos','InfosController@show');
+
 Route::get('squard', 'SquardController@index')->name('squard');
 
 Route::get('show/player/{id}','SquardController@show')->name('player');
@@ -66,5 +76,23 @@ Route::post('tukio','EventsController@event');
 
 
 Route::post('taarifa','InfosController@info');
+
+
+Route::post('about_us','FrontController@store');
+
+Route::get('heros_content','FrontController@index');
+
+Route::get('about_content','FrontController@show');
+
+Route::get('edit/about/{id}','FrontController@edit');
+
+Route::post('update/hero/{id}','FrontController@update');
+
+Route::post('update/about/{id}','FrontController@updateAbout');
+
+Route::get('edit/hero/{id}','FrontController@editHero');
+
+Route::post('hero','FrontController@storeHero');
+
 
 Route::post('magoli','GoalsController@goal');

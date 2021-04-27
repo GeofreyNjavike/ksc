@@ -33,7 +33,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
+  <div class="carousel-item" style="background-image: url('{{ asset('assets/img/slide/slide-3.jpg') }}')">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
@@ -132,9 +132,7 @@
                                     <li class="nav-item">
                                       <a class="nav-link" data-toggle="tab" href="#menu1">Carieer</a>
                                     </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link" data-toggle="tab" href="#menu2">Matches</a>
-                                    </li>
+                                    
                                     <style>
                                         .nav-link{
                                             color: dodgerblue;
@@ -297,11 +295,7 @@
 
 </div>
                                       </div>
-                                    <div id="menu2" class="container tab-pane fade"><br>
-                                      <h3>Menu 2</h3>
-                                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                                    </div>
-                                  </div>
+                                   
 
 
 

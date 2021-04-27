@@ -94,18 +94,68 @@
      
  @endforeach
 
-   <section id="news" class="testimonials section-bg">
-        <div class="container">
-<div class="row">
-<h3>Habari Mchanganyiko</h3>
-<hr>
+     <!-- ======= Portfolio Details Section ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container">
 
+        <div class="row">
+          <div class="row gy-4">
 
+          <div class="col-lg-5" >
+           
+          </div>
 
-</div>
+          <div class="col-lg-7">
+            <div class="portfolio-info">
+              <h3>MAHUDHURIO</h3>
+              <ul>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <li><strong>Siku alizohudhuria</strong>: SIKU {{$days_attended}}</li>
+                
+                  </div>
+                  <div class="col-sm-4">
+                    <li ><strong >Kiasi kwa kila siku:</strong>  2000 TZS</li>
+                  </div>
+                  <div class="col-sm-4">
+                    <li><strong>Kiasi Unachodaiwa</strong>: {{$days_attended*2000}} TZS</li>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  @if($days_attended >=1)
+@foreach($player_news as $value)
+<div class="col-sm-6">
+                    <li><a href=" {{ URL::to('downloadInvoice/'.$value->player_id) }}" class="btn btn-info btn-lg" style="font-size: 10px;"><i class="fa fa-download" aria-hidden="true"></i>
+Download Invoice</a></td></li>
+                
+                  </div>
+                  @endforeach
+                  @else
+                  <div class="col-sm-6">
+                    <li><a href=" {{ URL::to('home') }}" class="btn btn-info btn-lg" style="font-size: 10px;"><i class="fa fa-download" aria-hidden="true"></i>
+Processing Your Invoice</a></td></li>
+                
+                  </div>
+                  @endif
+                  <hr>
+                  <div class="col-sm-6">
+                   <li><a href="{{url('home')}}" class="btn btn-primary btn-lg" style="font-size: 10px;"><i class="fas fa-undo"></i>Dashboard</a></td>
+                                   </li>
+                  </div>
+                  
+                </div>
+
+              </ul>
+            </div>
+            
+          </div>
 
         </div>
-      </section>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
 
 
 

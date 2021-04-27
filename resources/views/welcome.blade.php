@@ -9,37 +9,18 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+       @foreach($hero as $value)
+       <div class="carousel-item active" style="background-image: url(asset('storage/app/public/heros/'.$value->hero_image))">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown" style="text-align: center;">Karibu <span><b>Kisota Community Sports Center</b></span></h2>
-              <p class="animate__animated animate__fadeInUp">Kwasababu ya miji kukua na changamoto kama usalama watoto wanafungiwa kwenye mageti na wanaenda na kurudi kutoka shule kwa magari hawapati nafasi ya kucheza na kujichanganya na wenzao mtaani</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Karibu>>></a>
+              <h2 class="animate__animated animate__fadeInDown" style="text-align: center;">Karibu <span><b>{{$value->hero_head}}</b></span></h2>
+              <p class="animate__animated animate__fadeInUp">{{$value->hero_content}}</p>
+              <a href="{{url('home')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Karibu>>></a>
             </div>
           </div>
         </div>
+       @endforeach
 
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Timiza  Ndoto za Mwanao Mpe nafasi ya Kucheza na kukua</h2>
-              <p class="animate__animated animate__fadeInUp">I have found the best way to give advice to your children is to find out what they want and then advise them to do it.</p>
-              <a href="{{ url('home')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Msajili Mwanao...</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">We must teach our children to dream with their eyes open. </h2>
-              <p class="animate__animated animate__fadeInUp">If you want your children to be intelligent, read them fairy tales. If you want them to be more intelligent, read them more fairy tales.</p>
-              <a href="{{url('home')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Register your child>>></a>
-            </div>
-          </div>
-        </div>
 
       </div>
 
@@ -55,7 +36,9 @@
   </section><!-- End Hero -->
 
 
-  <section id="about" class="about">
+ @foreach($about as $value)
+
+ <section id="about" class="about">
     <div class="container aos-init aos-animate" data-aos="fade-up">
 
       <div class="section-title">
@@ -66,7 +49,7 @@
       <div class="row content">
         <div class="col-lg-6">
           <p>
-            Kisota community sports centre (KSC) ni kituo cha watoto kwaajili ya :
+            {{$value->about_head}}:
           </p>
           <ul>
             <li><i class="ri-check-double-line"></i> kucheza</li>
@@ -85,14 +68,7 @@
                                             <p>
             Kwasababu ya miji kukua na changamoto kama usalama watoto wanafungiwa kwenye mageti na wanaenda na kurudi kutoka shule kwa magari hawapati nafasi ya kuchaza na kujichanganya na wenzao mtaani. Hii inapelekea hata kuwa na afya mbovu n.k
           </p>
-                                            <div class="collapse" id="collapseExample123"><p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                                nesciunt sapiente ea
-                                                proident.</p>
-                                                <p>Donec molestie odio id nisi malesuada, mattis tincidunt velit egestas. Sed non pulvinar risus. Aenean elementum eleifend nunc, pellentesque dapibus arcu hendrerit fringilla. Aliquam in nibh massa. Cras ultricies
-                                                    lorem non enim volutpat, a eleifend urna placerat. Fusce id luctus urna. In sed leo tellus. Mauris tristique leo a nisl feugiat, eget vehicula leo venenatis. Quisque magna metus, luctus quis sollicitudin vel,
-                                                    vehicula nec ipsum. Donec rutrum commodo lacus ut condimentum. Integer vel turpis purus. Etiam vehicula, nulla non fringilla blandit, massa purus faucibus tellus, a luctus enim orci non augue. Aenean
-                                                    ullamcorper nisl urna, non feugiat tortor volutpat in. Vivamus lobortis massa dolor, eget faucibus ipsum varius eget. Pellentesque imperdiet, turpis sed sagittis lobortis, leo elit laoreet arcu, vehicula
-                                                    sagittis elit leo id nisi.</p></div>
+                                            <div class="collapse" id="collapseExample123"><p>{{$value->about_content}}</p></div>
                                         </div>
                                         <div class="card-footer">
                                             <button type="button" data-toggle="collapse" href="#collapseExample123" class="btn btn-primary">Jifunze Zaidi</button>
@@ -108,7 +84,7 @@
   </section>
 
 
-
+@endforeach
       <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
@@ -336,7 +312,7 @@
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     <div class="row">
-                      <div class="col-sm-5">
+                      <div class="col-sm-12">
                         <p>{{$a->ushuhuda}}</p>
                       </div>
 
@@ -451,24 +427,6 @@
     </div>
   </section>
 
-  <section id="services" class="services">
-    <div class="container aos-init aos-animate" data-aos="fade-up">
 
-      <div class="section-title">
-        <h2>Kupitia Google Ramani</h2>
-        <p>Tunapatikana</p>
-      </div>
-
-      <div class="row">
-
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1980.683471503656!2d39.346463526385406!3d-6.846539771435801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5f6002cc06bef760!2sKenonke%20Consulting!5e0!3m2!1ssw!2stz!4v1616922195096!5m2!1ssw!2stz" width="100%;" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>       </div>
-
-
-
-      </div>
-
-    </div>
-  </section>
 
 @endsection

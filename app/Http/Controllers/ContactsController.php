@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Contact;
 use App\Info;
 use App\Event;
+use App\About;
+use App\Hero;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\AssignOp\Concat;
@@ -26,7 +28,7 @@ class ContactsController extends Controller
     public function index()
     {
 
-        $users = DB::table('users')->get();
+        $users = DB::table('users')->where('ushuhuda','!=','null')->get();
         // get the current time
 $current = Carbon::now();
 
@@ -43,8 +45,11 @@ $infoExpires = $current->addDays();
 
         $mails = DB::table('contacts')->count();
 
+        $hero = Hero::get();
+        $about= About::get();
 
-        return view('welcome', compact('player','info','events','players','mails','users'));
+
+        return view('welcome', compact('player','info','events','players','mails','users','about','hero'));
     }
     
 

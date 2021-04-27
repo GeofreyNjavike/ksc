@@ -65,7 +65,12 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ url('payed')}}">Malipo</a>
+                                    <a class="nav-link" href="{{ url('heros_content')}}">Sliders | Hero</a>
+
+                                      <a class="nav-link" href="{{ url('about_content')}}">AboutUs</a>
+                                      <a class="nav-link" href="{{ url('payed')}}">Malipo</a>
+                                       <a class="nav-link" href="{{ url('events')}}">Tukio</a>
+                                        <a class="nav-link" href="{{ url('infos')}}">Taarifa</a>
                                     <a class="nav-link" href="{{ url('mahudhurio')}}">Mahudurio</a>
                                 </nav>
                             </div>
@@ -82,6 +87,8 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalhr">Slider Content</a>
+                                        <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalab">About Us</a>
                                             <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModald">Tengeneza Taarifa</a>
                                             <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModaly">Tengeneza Tukio</a>
                                             <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalz">Atendance</a>

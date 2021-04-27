@@ -281,6 +281,16 @@ $dt3 =$dt->diffInYears($age0);
         return  redirect()->route('home')->with('success', 'Player Deleted');
     }
 
+    public function destroyuser($id)
+    {
+
+
+
+        DB::table('users')->where('id',$id)->delete();
+
+        return back()->with('success', 'User Deleted');
+    }
+
 
 public function send_aprove(Player $player, $id){
         $user= Player::
@@ -303,6 +313,20 @@ public function send_aprove(Player $player, $id){
         return redirect()->route('home')->with('success', 'Status Edited Succefully');
 
 
+}
+public function showMahudhurio($id){
+
+    $userId=Auth::user()->id;
+
+             $days_attended= Player::
+             join('users', 'players.parent_id', '=', 'users.id')
+             ->join('atendances', 'atendances.player_id', '=', 'players.player_id')
+             ->where('players.player_id', '=', $id)
+             ->where('players.parent_id', $userId)
+             ->where('atendances.maendeleo', '=', 'yupo')
+             ->count();
+             
+             return $days_attended;
 }
 
 }

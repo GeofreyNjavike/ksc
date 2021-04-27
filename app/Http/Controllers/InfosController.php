@@ -1,10 +1,17 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Info;
 use Illuminate\Http\Request;
+use App\Player;
+use App\Atendance;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+use App\Info;
 class InfosController extends Controller
 {
 
@@ -29,5 +36,12 @@ class InfosController extends Controller
 
         $info->save();
         return redirect()->route('home');
+    }
+
+    public function show(Request $request){
+
+        $info= DB::table('infos')->get();
+
+        return view('admin.info',compact('info'));
     }
 }

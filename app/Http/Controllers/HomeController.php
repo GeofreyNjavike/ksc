@@ -77,6 +77,7 @@ class HomeController extends Controller
         else
         {
             $userId=Auth::user()->id;
+
             $parent= Player::
              join('users', 'players.parent_id', '=', 'users.id')
              ->where('players.parent_id', $userId)
