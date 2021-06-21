@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +14,25 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 Auth::routes();
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+
+    return "done";
+});
+
+Route::get('/foo1', function () {
+    Artisan::call('migrate');
+
+    return "done";
+});
+// Route::get('/clear-cache', function() {
+//     $exitCode = Artisan::call('cache:clear');
+//     return "hi";
+// });
 
 Route::get('/', 'ContactsController@index')->name('/');
 
-Route::get('/taarifa/{id}', 'NewsController@show')->name('news');
+Route::get('/taarifa/{id}', 'FrontController@show1')->name('news');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -43,6 +58,9 @@ Route::get('showMahudhurio/{id}','PlayersController@showMahudhurio');
 
 Route::get('downloadInvoice/{id}','GoalsController@downloadInvoice');
 
+Route::get('delete/info/{id}','InfosController@destroy');
+
+Route::get('delete/event/{id}','EventsController@destroy');
 
 Route::get('detele/email/{id}','ContactsController@destroy');
 
@@ -80,6 +98,8 @@ Route::post('taarifa','InfosController@info');
 
 Route::post('about_us','FrontController@store');
 
+Route::post('video_urls','VideoController@update');
+
 Route::get('heros_content','FrontController@index');
 
 Route::get('about_content','FrontController@show');
@@ -91,6 +111,7 @@ Route::post('update/hero/{id}','FrontController@update');
 Route::post('update/about/{id}','FrontController@updateAbout');
 
 Route::get('edit/hero/{id}','FrontController@editHero');
+Route::get('delete/hero/{id}','FrontController@destroy');
 
 Route::post('hero','FrontController@storeHero');
 

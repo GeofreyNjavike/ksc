@@ -6,10 +6,9 @@ use App\Contact;
 use App\Goal;
 use App\User;
 use Illuminate\Support\Facades\Hash;
-use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -71,9 +70,9 @@ class HomeController extends Controller
              ->count();
 
             return view('coach.home',compact('user','count_players'));
-        } 
-        
-        
+        }
+
+
         else
         {
             $userId=Auth::user()->id;
@@ -101,24 +100,24 @@ class HomeController extends Controller
         return view('parent_home',compact('parent'));
 
     }
-    
+
 
     public function addUser(Request $request, User $user){
 
-      
+
         $user->fname=$request->fname;
         $user->lname=$request->lname;
         $user->phone=$request->phone;
         $user->email=$request->email;
         $user->clearance_level=$request->clearance_level;
         $user->password=Hash::make($request->password);
-               
+
         $user->save();
                 // 'password' => Hash::make($data['password']),
 
                 return back();
-            
-    
+
+
     }
 
      public function destroy($id)

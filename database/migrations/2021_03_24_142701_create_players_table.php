@@ -14,9 +14,9 @@ class CreatePlayersTable extends Migration
     public function up()
     {
         Schema::create('players', function (Blueprint $table) {
-            $table->id();
-            $table->string('fname');
-            $table->string('lname');
+            $table->bigIncrements('player_id');
+            $table->string('player_fname');
+            $table->string('player_lname');
             $table->date('dob');
             $table->string('weight');
             $table->string('height');
@@ -25,6 +25,16 @@ class CreatePlayersTable extends Migration
             $table->string('school');
             $table->string('class');
             $table->integer('parent_id')->nullable();
+            $table->string('image')->nullable();
+            $table->string('position')->nullable();
+            $table->string('foot')->nullable();
+            $table->string('jezi')->nullable();
+            $table->string('progress')->nullable();
+            $table->string('nguvu')->nullable();
+            $table->string('chenga')->nullable();
+            $table->string('kumbukumbu')->nullable();
+            $table->string('payment')->nullable()->default('Not Payed');
+            $table->string('usajili')->nullable();
             $table->timestamps();
         });
     }

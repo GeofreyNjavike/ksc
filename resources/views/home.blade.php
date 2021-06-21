@@ -23,6 +23,19 @@
       <div class="col-lg-3"></div>
     </div>
     @endif
+
+    @if($condition  = Session :: get('message'))
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <div class="alert alert-danger">
+    <p>{{ $condition}}</p>
+    </div>
+
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+    @endif
         <div class="row">
         <div class="col-xl-2 col-md-6">
         </div>
@@ -132,8 +145,16 @@
                             <td>{{ $value->class }}</td>
                             <td>{{ $value->medical_issue }}</td>
                             <td>{{ $value->disabled }}</td>
-                            <td>{{ $value->phone }}</td>
-                            <td>{{ $value->email }}</td>
+                            <td>
+
+                                <a href="tel:{{ $value->phone }}">{{ $value->phone }}</a>
+                                </td>
+                            <td>
+                                <a href="mailto:{{ $value->email }}"> {{ $value->email }}</a>
+
+
+
+                                </td>
 
                         </tr>
                         @endforeach
@@ -169,7 +190,7 @@
                 <div class="row">
                     <div class="container jumbotron">
                         <div class="col-md-3">
-                            <img src=" {{ asset('storage/players/'.$went->image) }}" class="rounded-circle " style="height:
+                            <img src=" {{ asset('storage/app/public/players/'.$went->image) }}" class="rounded-circle " style="height:
                             70px; width:70px;" >
                             <br>
 
@@ -225,7 +246,7 @@
           </div>
 
           <div class="modal-body">
-           
+
 <div class="row">
     <div class="card mb-4">
         <div class="card-header">
@@ -485,14 +506,14 @@
                 @csrf
                 <div class="row">
                     <div class="container jumbotron">
-                    
+
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="small mb-1" >Kichwa:</label>
                                     <input class="form-control py-4" name="about_head"   id="inputFirstName" type="text"  required/>
                                 </div>
                             </div>
-                       
+
 
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -517,9 +538,67 @@
       </div>
     </div>
 
+ <!-- Modal 4-->
+    <div class="modal fade" id="exampleModalabvid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; color: #4F42B5;">TENGENEZA VIDEO URLs</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
 
 
-    <!-- Modal 4-->
+            <form action="{{ url('video_urls') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="container jumbotron">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" >First Video:</label>
+                                    <input class="form-control py-4" name="first_video"   id="first_video" type="text" />
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" >Second Video:</label>
+                                    <input class="form-control py-4" name="second_video"   id="second_video" type="text"/>
+                                </div>
+                            </div>
+
+<ul>
+   <div class="alert alert-info">
+    <p>You Can Upload Single Or Both Videos</p>
+   </div>
+    <div class="alert alert-danger">
+        <p style="font-size: 12px">Note: <strong>The Video You Are Uploading Will Replace the Availabe Video</strong></p>
+    </div>
+</ul>
+
+                          </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input required type="submit"  value="save"  class="btn btn-secondary" style="background-color:#4F42B5">
+                  </div>
+
+            </form>
+    </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Modal 5-->
     <div class="modal fade" id="exampleModalc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -536,7 +615,7 @@
                 <div class="row">
                     <div class="container jumbotron">
                         <div class="form-row">
-                          
+
                             <div class="col-md-6">
                                 <label for="fname" class="small mb-1 col-form-label text-md-right">{{ __('First Name') }}</label>
 
@@ -548,7 +627,7 @@
                                     </span>
                                 @enderror
                             </div>
-                           
+
 
                             <div class="col-md-6">
                                  <label for="lname" class="small mb-1 col-form-label text-md-right">{{ __('Last Name') }}</label>
@@ -575,7 +654,7 @@
 
                                 </div>
                             </div>
-                            
+
 
                             <div class="col-md-6">
 
@@ -590,12 +669,12 @@
                                 @enderror
                             </div>
                         </div>
-                           
+
 
 
 
                                 <div class="form-row">
-                                    
+
                             <div class="col-md-6">
 <label for="phone" class="small mb-1 col-form-label text-md-right">{{ __('Phone Number') }}</label>
 
@@ -619,9 +698,14 @@
                                 @enderror
                             </div>
 
-                            </div> 
+                            </div>
 
+<ul>
+    <div class="alert alert-info">
+<p>NOTE:<strong>CLEARANCE LEVEL 1 FOR Parent, CLEARANCE LEVEL 5 For Coach and  CLEARANCE LEVEL 10 for Admin</strong></p>
 
+    </div>
+</ul>
 
                           </div>
                   </div>

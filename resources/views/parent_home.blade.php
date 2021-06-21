@@ -28,6 +28,17 @@
 
 
         <div class="row">
+            @foreach ($parent as $value11)
+            @if($value11->payment=='Not Payed')
+            <ul>
+                <div class="alert alert-warning">
+<p>
+Tafadhari lipa shillingi 10,000/= Kukamilisha Usajili wa Mwanao
+</p>
+                </div>
+            </ul>
+            @endif
+            @endforeach
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table mr-1"></i>
@@ -60,7 +71,7 @@
                                 <tr>
                                     <td>{{ $value->player_id }}</td>
                                     <td>{{ $value->player_fname }}  {{ $value->player_lname }}</td>
-                                    
+
                                     <td >
 
                                         @if($value->progress == 'Pending')
@@ -84,7 +95,7 @@
                                 </td>
                               <td><a href="{{url('showPlayer/'.$value->player_id)}}" class="btn btn-info btn-lg" style="font-size: 10px;"><i class="fas fa-eye"></i> View</a></td>
                                     <td>
-                                        
+
 @if($value->payment == 'Payed')
                                             <a style="font-size: 10px" class="btn btn-success" data-toggle="modal" metho="post" >{{ $value->payment }}
                                             </a>
@@ -97,7 +108,7 @@
                                            @endif
 
                                     </td>
-                            
+
                                     <td>{{ $value->dob }}</td>
                                     <td>{{ $value->weight }}</td>
                                     <td>{{ $value->height }}</td>
@@ -266,9 +277,9 @@
                                 <div class="card-header"><h3 class="text-center font-weight-light my-4" style="color: #0077be; font-size: 15px;">FANYA MALIPO KUKAMILISHA USAJILI WA MWANAO</h3></div>
                                  <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">
-        <span> <img src="{{ asset('assets/img/Vodacom.jpg') }}" width="20" height="20"> </span> 
+        <span> <img src="{{ asset('assets/img/M-pesa.png') }}" width="20" height="20"> </span>
           M-PESA</a></li>
-    <li><a data-toggle="tab" href="#menu1" style="colour: blue;">       <span> <img src="{{ asset('assets/img/tigo.svg') }}" width="20" height="20"> </span> TIGO PESA</a></li>
+    <li><a data-toggle="tab" href="#menu1" style="colour: blue;">       <span> <img src="{{ asset('assets/img/TigoPesa.jpg') }}" width="20" height="20"> </span> TIGO PESA</a></li>
     <li><a data-toggle="tab" href="#menu2">       <span> <img src="{{ asset('assets/img/airtel.png') }}" width="20" height="20"> </span> AIRTEL MONEY</a></li>
   </ul>
 
@@ -281,13 +292,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="small mb-1" >1. PIGA <b>*150*00#</b></label>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="small mb-1" >2. CHAGUA <b>(1) TUMA PESA</b></label>
-                                                
+
                                                 </div>
                                             </div>
                                         </div>
@@ -296,28 +307,28 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                      <label class="small mb-1" >3. CHAGUA <b>(1) WEKA NAMBA YA SIMU</b></label>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                   <label class="small mb-1" >4. ANDIKA <b> 0765133861</b></label>
-                                                
+
                                                 </div>
                                             </div>
                                         </div>
-                                      
+
                                         <div class="form-row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    
+
                                                      <label class="small mb-1" >5. ANDIKA KIASI</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                         <label class="small mb-1" >6. ANDIKA NYILA YAKO</label>  
-                                                   
+                                                         <label class="small mb-1" >6. ANDIKA NYILA YAKO</label>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -325,12 +336,12 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                   <label class="small mb-1" for="sel1">7. THIBITISHA JINA <b>PETER MADOSH</b></label>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                   
+
      <label class="small mb-1" >8. ANDIKA <b>1</b></label>
                                               </div>
                                             </div>
@@ -357,7 +368,7 @@
                                 </div>
     </div>
     <div id="menu1" class="tab-pane fade">
-     
+
        <div class="card-body">
                                     <form action="{{ URL::to('malipo') }}" method="POST">
                                         @csrf
@@ -365,13 +376,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="small mb-1" >1. PIGA <b>*150*01#</b></label>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="small mb-1" >2. CHAGUA <b>(3) TUMA MITANDAO MINGINE</b></label>
-                                                
+
                                                 </div>
                                             </div>
                                         </div>
@@ -380,42 +391,42 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                      <label class="small mb-1" >3. CHAGUA <b>(3) M-PESA</b></label>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                   <label class="small mb-1" >4. ANDIKA <b> 0765133861</b></label>
-                                                
+
                                                 </div>
                                             </div>
                                         </div>
-                                      
+
                                         <div class="form-row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    
+
                                                      <label class="small mb-1" >5. ANDIKA KIASI</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="sel1">7. THIBITISHA JINA <b>PETER MADOSH</b></label>
-                                                         
-                                                   
+
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                  <label class="small mb-1" >6. ANDIKA NYILA YAKO</label> 
-                                                    
+                                                  <label class="small mb-1" >6. ANDIKA NYILA YAKO</label>
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                   
+
      <label class="small mb-1" >8. ANDIKA <b>1</b></label>
                                               </div>
                                             </div>
@@ -449,13 +460,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="small mb-1" >1. PIGA <b>*150*60#</b></label>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="small mb-1" >2. CHAGUA <b>(2) TUMA MITANDAO MINGINE</b></label>
-                                                
+
                                                 </div>
                                             </div>
                                         </div>
@@ -464,28 +475,28 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                      <label class="small mb-1" >3. CHAGUA <b>(2) M-PESA</b></label>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                 <label class="small mb-1" >3. CHAGUA <b>(1) INGIZA NAMBA </b></label>
-                                                
+
                                                 </div>
                                             </div>
                                         </div>
-                                      
+
                                         <div class="form-row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                     <label class="small mb-1" >4. ANDIKA <b> 0765133861</b></label> 
-                                                   
+                                                     <label class="small mb-1" >4. ANDIKA <b> 0765133861</b></label>
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                 
-                                                         
+
+
                                                      <label class="small mb-1" >5. ANDIKA KIASI</label>
                                                 </div>
                                             </div>
@@ -493,14 +504,14 @@
                                         <div class="form-row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                  
+
                                                        <label class="small mb-1" for="sel1">6. THIBITISHA JINA <b>PETER MADOSH</b></label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                   
-    <label class="small mb-1" >7. ANDIKA NYILA YAKO</label> 
+
+    <label class="small mb-1" >7. ANDIKA NYILA YAKO</label>
                                               </div>
                                             </div>
                                         </div>
@@ -518,6 +529,8 @@
                                                      </div>
                                             </div>
                                         </div>
+
+
                                         <div class="form-group mt-4 mb-0">
 
                                             <input type="submit" class="btn btn-primary btn-block" value="Thibitisha Malipo">
@@ -526,7 +539,7 @@
                                 </div>
     </div>
   </div>
-                               
+
 
                             </div>
                         </div>
@@ -558,22 +571,22 @@
           </div>
 
           <div class="modal-body">
-           
+
  <form action="{{ url('testmony') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="container jumbotron">
-                       
+
 
                         <div class="form-row">
-                           
 
-                                    
+
+
                             <div class="col-md-12">
 <label for="phone" class="small mb-1 col-form-label text-md-right">{{ __('Shuhuda') }}</label>
 
                                 <textarea id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="ushuhuda" value="{{ old('ushuhuda') }}" required autocomplete="ushuhuda" autofocus placeholder="+255" >
-                                    
+
 
                                 @error('ushuhuda')
                                     <span class="invalid-feedback" role="alert">
@@ -584,7 +597,7 @@
                                 </textarea>
 
                             </div>
-                          
+
    <div class="col-md-12">
 
                                 <label for="parent_image" class="small mb-1 col-form-label text-md-right">{{ __('Picha Yako') }}</label>

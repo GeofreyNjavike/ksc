@@ -20,6 +20,10 @@ class CreateGoalsTable extends Migration
             $table->string('magoli');
             $table->string('maoni');
             $table->date('tarehe_ya_magoli');
+            $table->string('url')->nullable();
+            $table->string('jaggling')->nullable();
+
+
             $table->timestamps();
         });
     }

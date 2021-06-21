@@ -87,8 +87,9 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalhr">Slider Content</a>
-                                        <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalab">About Us</a>
+                                        <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalhr">CREATE SLIDER CONTENT</a>
+                                        <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalab">CREATE ABOUT US</a>
+                                          <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalabvid">CREATE VIDEO URLs</a>
                                             <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModald">Tengeneza Taarifa</a>
                                             <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModaly">Tengeneza Tukio</a>
                                             <a class="nav-link"  type="button"  data-toggle="modal" data-target="#exampleModalz">Atendance</a>
@@ -133,9 +134,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Ksc 2020</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="www.njavikesoftcom.com">Developed By:-</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="www.njavikesoftcom.com">Njavike Softcom</a>
                             </div>
                         </div>
                     </div>

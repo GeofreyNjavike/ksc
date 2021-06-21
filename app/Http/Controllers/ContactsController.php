@@ -51,7 +51,7 @@ $infoExpires = $current->addDays();
 
         return view('welcome', compact('player','info','events','players','mails','users','about','hero'));
     }
-    
+
 
     /**
      * Show the form for creating a new resource.

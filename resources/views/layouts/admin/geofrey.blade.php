@@ -96,9 +96,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Ksc 2020</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="www.njavikesoftcom.com">Developed By:-</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="www.njavikesoftcom.com">Njavike Softcom</a>
                             </div>
                         </div>
                     </div>

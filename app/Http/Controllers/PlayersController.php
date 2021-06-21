@@ -74,12 +74,7 @@ if ($user === null) {
 
     $player->save();
 
-    $data = array('name'=>"Ksc");
 
-    Mail::send(['text'=>'mail'], $data, function($message) {
-        $message->to('geofreynjavike2017@gmail.com', 'Mzazi Mpendwa')->subject('Taarifa za mwanao zimepokelewa');
-        $message->from('graduatetz@gmail.com', 'Ksc');
-    });
 
 
 
@@ -116,8 +111,8 @@ if (!empty($user) ) {
     $data = array('name'=>"Ksc");
 
     Mail::send(['text'=>'malipo'], $data, function($message) {
-        $message->to('geofreynjavike@gmail.com', 'Habari Boss')->subject('Malipo Yamefanyika');
-        $message->from('graduatetz@gmail.com', 'Ksc');
+        $message->to('graduatetz@gmail.com', 'Habari Boss')->subject('Malipo Yamefanyika');
+        $message->from('graduatetz@kisotasc.com', 'Ksc');
     });
 
 
@@ -145,12 +140,12 @@ public function mahudhurio(){
 
 
    $date= DB::table('atendances')->select('created_at')->get();
-   
+
     $atend= Atendance::
              join('players', 'atendances.player_id', '=', 'players.player_id')->select('players.player_id','players.image','players.player_fname','players.player_lname','atendances.created_at','atendances.maendeleo')
              ->get();
 
-       
+
   return  view('admin.mahudhurio', compact('atend','date'));
 
 
@@ -267,7 +262,7 @@ $dt3 =$dt->diffInYears($age0);
 
     /**
      * Remove the specified resource from storage.
-     
+
           * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -297,12 +292,7 @@ public function send_aprove(Player $player, $id){
          join('users', 'players.parent_id', '=', 'users.id')
          ->first();
 
-    $data = array('name'=>"Ksc");
 
-    Mail::send(['text'=>'mail'], $data, function($message) {
-        $message->to('geofreynjavike2017@gmail.com', 'Mzazi Mpendwa')->subject('Usajili wa Mwanao Umekamilika');
-        $message->from('graduatetz@gmail.com', 'Ksc');
-    });
 
 
     $player= array();
@@ -325,7 +315,7 @@ public function showMahudhurio($id){
              ->where('players.parent_id', $userId)
              ->where('atendances.maendeleo', '=', 'yupo')
              ->count();
-             
+
              return $days_attended;
 }
 

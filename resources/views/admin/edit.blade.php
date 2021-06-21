@@ -31,6 +31,12 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Player information</h3></div>
                                     <div class="card-body">
                                         <form action="{{ URL::to('update/player/'.$player->player_id) }}" method="POST" enctype="multipart/form-data">
+
+
+
+
+
+                                        
                                             @csrf
                                             <div class="form-row">
                                                 <div class="col-md-4">

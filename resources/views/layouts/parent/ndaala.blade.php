@@ -82,7 +82,7 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModalk">Toa Ushahidi</a>
-                                   
+
                                 </nav>
                             </div>
 
@@ -112,9 +112,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Ksc 2020</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="www.njavikesoftcom.com">Developed By:-</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="www.njavikesoftcom.com">Njavike Softcom</a>
                             </div>
                         </div>
                     </div>

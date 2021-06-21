@@ -13,7 +13,7 @@ class CreateAboutusTable extends Migration
      */
     public function up()
     {
-        Schema::create('aboutus', function (Blueprint $table) {
+        Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('about_head');
             $table->string('about_content');
@@ -28,6 +28,6 @@ class CreateAboutusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aboutus');
+        Schema::dropIfExists('abouts');
     }
 }
