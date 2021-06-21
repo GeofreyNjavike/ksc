@@ -5,6 +5,7 @@ use App\Player;
 use App\Contact;
 use App\Goal;
 use App\User;
+use App\Video;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,6 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->clearance_level==10){
-
 
 
 

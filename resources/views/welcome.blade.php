@@ -205,10 +205,14 @@
                                         <h5 class="card-title">Video</h5>
                                         <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
 
-                                               <iframe width="100%" height="430"
-              src="https://www.youtube.com/embed/foiOZCm5Ooc" class="rounded">
-              </iframe>
+                                            @foreach ($first_video as $value1)
+                                            <iframe width="100%" height="430"
+                                                          @if(isset($first_video))
+                                                          src="https://www.youtube.com/embed/{!! $value1->first_video !!}?autoplay=1&mute=1">
+                                                          @endif
+                                                          </iframe>
 
+                                            @endforeach
 
                                         </div>
                                     </div>
@@ -245,7 +249,7 @@
 <span>{{ $info->created_at}}</span></p>
                      <hr/>
                     <div class="col-sm-12">
-                   
+
                        <p> {{$info->ujumbe}}  </p><span><a href="{{URL:: to('taarifa/'.$info->id)}}">Read more >>></a></span>
 
                     </div>
@@ -257,10 +261,10 @@
 
            @endforeach
 
-   
 
-               
-       
+
+
+
           </div>
           </div>
 
@@ -278,9 +282,15 @@
         <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 
 
-              <iframe width="100%" height="430"
-              src="https://www.youtube.com/embed/l9BRv4NbqqA">
+
+@foreach ($second_video as $value)
+<iframe width="100%" height="430"
+              @if(isset($second_video))
+              src="https://www.youtube.com/embed/{!! $value->second_video !!}?autoplay=1&mute=1">
+              @endif
               </iframe>
+
+@endforeach
 
 
 
@@ -301,7 +311,7 @@
                 </div>
               </div>
 
-             
+
 
 
 

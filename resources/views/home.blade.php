@@ -576,8 +576,13 @@
    <div class="alert alert-info">
     <p>You Can Upload Single Or Both Videos</p>
    </div>
+
     <div class="alert alert-danger">
         <p style="font-size: 12px">Note: <strong>The Video You Are Uploading Will Replace the Availabe Video</strong></p>
+    </div>
+
+    <div class="alert alert-danger">
+        <p style="font-size: 12px">Note: <strong>In the entire Youtube Url Copy and Store Only The Key</strong></p>
     </div>
 </ul>
 

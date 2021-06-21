@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
  use App\Player;
 
 use App\Atendance;
-
+use App\Video;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,6 +27,8 @@ class ContactsController extends Controller
      */
     public function index()
     {
+        $first_video = DB::table('videos')->whereNotNull('first_video')->latest('created_at')->limit(1)->get();
+        $second_video = DB::table('videos')->whereNotNull('second_video')->latest('created_at')->limit(1)->get();
 
         $users = DB::table('users')->where('ushuhuda','!=','null')->get();
         // get the current time
@@ -49,7 +51,13 @@ $infoExpires = $current->addDays();
         $about= About::get();
 
 
-        return view('welcome', compact('player','info','events','players','mails','users','about','hero'));
+        return view('welcome', compact('player','info','events','players','mails','users','about','hero','first_video','second_video'));
+
+
+
+
+
+
     }
 
 
